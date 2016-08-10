@@ -13,6 +13,8 @@ namespace Domain
         {
         }
 
+        public Employer Employer { get; private set; }
+
         public string Name { get; private set; }
     }
 }

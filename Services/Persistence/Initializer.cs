@@ -17,6 +17,11 @@ namespace Services.Persistence
 
         protected override void Seed(DbContext context)
         {
+            if (!context.IsInitialized())
+            {
+                return;
+            }
+
             context.ValidateNotNullParameter(nameof(context));
 
             context.Employees.Add(new Employee("Ted"));

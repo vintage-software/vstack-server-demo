@@ -7,8 +7,8 @@ namespace Services.Persistence
 {
     public class DbContext : VstackDbContext
     {
-        public DbContext(string connectionString)
-            : base(connectionString)
+        public DbContext()
+            : base("Demo")
         {
             Database.SetInitializer(new Initializer(Assembly.GetExecutingAssembly()));
         }

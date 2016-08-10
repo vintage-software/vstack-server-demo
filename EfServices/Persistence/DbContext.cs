@@ -6,8 +6,8 @@ namespace Services.EF.Persistence
 {
     public class DbContext : VstackEfDbContext
     {
-        public DbContext(string connectionString)
-            : base(connectionString)
+        public DbContext()
+            : base("EfDemo")
         {
             Database.SetInitializer(new Initializer());
         }

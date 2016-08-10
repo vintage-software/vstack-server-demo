@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filters\ByDateHired.cs" />
     <Compile Include="Filters\ByName.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />
     <Compile Include="Persistence\DbContext.cs" />

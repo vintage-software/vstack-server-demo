@@ -8,7 +8,7 @@ namespace Services.EF.Mappers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Ussually we'd use DI")]
         public EmployeeMapper()
-            : base(new DbContext("EfDemo"))
+            : base(new DbContext())
         {
         }
     }

@@ -1,12 +1,10 @@
 ﻿using Domain;
-using Services.EF.Mappers;
 using System.Linq;
-using Vstack.Extensions;
 using Vstack.Services.Filters;
 
 namespace Services.EF.Filters
 {
-    public class ByName : IPrimaryFilter<Employee, EmployeeMapper>
+    public class ByName : ISecondaryFilter<Employee>
     {
         private readonly string name;
 
@@ -15,12 +13,9 @@ namespace Services.EF.Filters
             this.name = name;
         }
 
-        public IQueryable<Employee> PrimaryFilter(EmployeeMapper mapper)
+        public IQueryable<Employee> SecondaryFilter(IQueryable<Employee> domains)
         {
-            mapper.ValidateNotNullParameter(nameof(mapper));
-
-            return mapper.DbSet
-                .Where(i => i.Name == this.name);
+            return domains.Where(i => i.Name == this.name);
         }
     }
 }
