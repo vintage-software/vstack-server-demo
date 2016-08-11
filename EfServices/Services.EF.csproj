@@ -51,8 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\EmployerConverter.cs" />
+    <Compile Include="Converters\EmployeeConverter.cs" />
+    <Compile Include="DtoServices\EmployeeDtoService.cs" />
+    <Compile Include="Dto\Employer.cs" />
+    <Compile Include="Dto\Employee.cs" />
     <Compile Include="Filters\ByDateHired.cs" />
     <Compile Include="Filters\ByName.cs" />
+    <Compile Include="General\Permissions.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />
     <Compile Include="Persistence\DbContext.cs" />
     <Compile Include="Persistence\Initializer.cs" />
@@ -90,6 +96,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

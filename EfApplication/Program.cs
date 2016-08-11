@@ -20,9 +20,9 @@ namespace Application.EF
             Console.ReadLine();
         }
 
-        private static ActionResult<Employee> Create(string name)
+        private static ActionResult<Employee> Create(int employerId, string name, string socialSecurityNumber, string password)
         {
-            Employee employee = new Employee(name);
+            Employee employee = new Employee(employerId, name, socialSecurityNumber, password);
             return Service.Save(employee);
         }
 

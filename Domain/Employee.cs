@@ -1,20 +1,57 @@
-﻿using Vstack.Services.Domain;
+﻿using System;
+using Vstack.Services.Domain;
 
 namespace Domain
 {
     public class Employee : BaseDomain
     {
-        public Employee(string name)
+        public Employee(int employerId, string name, string socialSecurityNumber, string password)
         {
+            this.EmployerId = employerId;
             this.Name = name;
+            this.SocialSecurityNumber = socialSecurityNumber;
+            this.Password = password;
         }
 
         private Employee()
         {
         }
 
-        public Employer Employer { get; private set; }
+        public int EmployerId { get; private set; }
 
         public string Name { get; private set; }
+
+        public string SocialSecurityNumber { get; private set; }
+
+        public string Password { get; private set; }
+
+        public decimal AnnualSalary { get; private set; }
+
+        public string InternalNotes { get; private set; }
+
+        public int? InternalNotesSuperUserId { get; private set; }
+
+        public Employer Employer { get; private set; }
+
+        public void UpdateInternalNotes(int superUserId, string internalNotes)
+        {
+            this.InternalNotesSuperUserId = superUserId;
+            this.InternalNotes = internalNotes;
+        }
+
+        public void UpdateAnnualSalary(decimal annualSalary)
+        {
+            this.AnnualSalary = annualSalary;
+        }
+
+        public void ChangePassword(string password)
+        {
+            this.Password = password;
+        }
+
+        public void ChangeName(string name)
+        {
+            this.Name = name;
+        }
     }
 }

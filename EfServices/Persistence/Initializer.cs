@@ -10,7 +10,11 @@ namespace Services.EF.Persistence
         {
             context.ValidateNotNullParameter(nameof(context));
 
-            context.Employees.Add(new Employee("Ted"));
+            Employer employer = new Employer("Flannigan Corp");
+            context.Employers.Add(employer);
+            context.SaveChanges();
+
+            context.Employees.Add(new Employee(employer.Id, "Ted", "555-55-5555", "Password123"));
             context.SaveChanges();
 
             base.Seed(context);

@@ -13,5 +13,7 @@ namespace Services.EF.Persistence
         }
 
         public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<Employer> Employers { get; set; }
     }
 }
