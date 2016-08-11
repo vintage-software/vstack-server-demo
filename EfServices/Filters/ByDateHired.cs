@@ -5,7 +5,7 @@ using Vstack.Services.Filters;
 
 namespace Services.EF.Filters
 {
-    public class ByDateHired : ISecondaryFilter<Employee>
+    public class ByDateHired : IFilter<Employee>
     {
         private readonly DateTime? from;
 
@@ -17,7 +17,7 @@ namespace Services.EF.Filters
             this.to = to;
         }
 
-        public IQueryable<Employee> SecondaryFilter(IQueryable<Employee> domains)
+        public IQueryable<Employee> Filter(IQueryable<Employee> domains)
         {
             return domains.Where(i =>
                 (this.from < i.UtcDateCreated || this.from == null)

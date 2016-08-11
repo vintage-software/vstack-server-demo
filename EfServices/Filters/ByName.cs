@@ -4,7 +4,7 @@ using Vstack.Services.Filters;
 
 namespace Services.EF.Filters
 {
-    public class ByName : ISecondaryFilter<Employee>
+    public class ByName : IFilter<Employee>
     {
         private readonly string name;
 
@@ -13,7 +13,7 @@ namespace Services.EF.Filters
             this.name = name;
         }
 
-        public IQueryable<Employee> SecondaryFilter(IQueryable<Employee> domains)
+        public IQueryable<Employee> Filter(IQueryable<Employee> domains)
         {
             return domains.Where(i => i.Name == this.name);
         }
