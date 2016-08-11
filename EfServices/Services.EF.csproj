@@ -53,16 +53,19 @@
   <ItemGroup>
     <Compile Include="Converters\EmployerConverter.cs" />
     <Compile Include="Converters\EmployeeConverter.cs" />
+    <Compile Include="DtoServices\EmployerDtoService.cs" />
     <Compile Include="DtoServices\EmployeeDtoService.cs" />
     <Compile Include="Dto\Employer.cs" />
     <Compile Include="Dto\Employee.cs" />
     <Compile Include="Filters\ByDateHired.cs" />
     <Compile Include="Filters\ByName.cs" />
     <Compile Include="General\Permissions.cs" />
+    <Compile Include="Mappers\EmployerMapper.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />
     <Compile Include="Persistence\DbContext.cs" />
     <Compile Include="Persistence\Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmployerService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
   </ItemGroup>
   <ItemGroup>

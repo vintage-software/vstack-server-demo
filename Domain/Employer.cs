@@ -17,5 +17,10 @@ namespace Domain
         public ICollection<Employee> Employees { get; private set; }
 
         public string Name { get; private set; }
+
+        public void ChangeName(string name)
+        {
+            this.Name = name;
+        }
     }
 }

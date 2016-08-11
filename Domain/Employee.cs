@@ -1,5 +1,4 @@
-﻿using System;
-using Vstack.Services.Domain;
+﻿using Vstack.Services.Domain;
 
 namespace Domain
 {
@@ -32,6 +31,8 @@ namespace Domain
         public int? InternalNotesSuperUserId { get; private set; }
 
         public Employer Employer { get; private set; }
+
+        public string SecurityStamp { get; private set; }
 
         public void UpdateInternalNotes(int superUserId, string internalNotes)
         {

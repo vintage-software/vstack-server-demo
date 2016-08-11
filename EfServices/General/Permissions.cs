@@ -12,6 +12,11 @@ namespace Services.EF.General
 
         private readonly int? employerId;
 
+        public Permissions(int? employeeId)
+        {
+            this.employeeId = employeeId;
+        }
+
         private Permissions(bool isInternal)
         {
             this.isInternal = isInternal;
