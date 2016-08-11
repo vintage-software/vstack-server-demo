@@ -66,10 +66,6 @@
       <Project>{029ecbe3-6e0e-498e-80a7-bad385891c91}</Project>
       <Name>Vstack.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\vstack-services-elastic\Vstack.Services.Elastic.csproj">
-      <Project>{fdf26743-2b8d-40ed-9d23-7cec7ddfc002}</Project>
-      <Name>Vstack.Services.Elastic</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\vstack-services\Vstack.Services.csproj">
       <Project>{86d88ab5-bd70-43af-8538-a3f9cd53e979}</Project>
       <Name>Vstack.Services</Name>
