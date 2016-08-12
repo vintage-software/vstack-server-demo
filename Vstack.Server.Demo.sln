@@ -3,25 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{26401FD2-BAC1-4B81-BB14-BD6F5816BB34}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Extensions", "..\vstack-extensions\Vstack.Extensions.csproj", "{029ECBE3-6E0E-498E-80A7-BAD385891C91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Services", "..\vstack-services\Vstack.Services.csproj", "{86D88AB5-BD70-43AF-8538-A3F9CD53E979}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Utilities", "..\vstack-utilities\Vstack.Utilities.csproj", "{A6182F30-7583-41A5-8971-D33E923E8C37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{2C272556-A2AB-4B71-B23E-7508482F69AD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.EF", "EfServices\Services.EF.csproj", "{3221B6B2-6456-4E03-811D-E964FCC1985C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "EfServices\Services.csproj", "{3221B6B2-6456-4E03-811D-E964FCC1985C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D834A5AF-AE77-4A3E-888D-29175186EB82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.EF", "EfApplication\Application.EF.csproj", "{01D230A0-489C-40BC-BEF5-35170CD2067C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{7B19ED59-8CE3-4945-97EE-4182201CA04E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.EF", "WebApi.EF\WebApi.EF.csproj", "{E44753A0-4EB4-4781-90F7-780147AD54F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi.EF\WebApi.csproj", "{E44753A0-4EB4-4781-90F7-780147AD54F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Services.Elastic", "..\vstack-services-elastic\Vstack.Services.Elastic.csproj", "{FDF26743-2B8D-40ED-9D23-7CEC7DDFC002}"
 EndProject
@@ -33,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{26401FD2-BAC1-4B81-BB14-BD6F5816BB34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26401FD2-BAC1-4B81-BB14-BD6F5816BB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26401FD2-BAC1-4B81-BB14-BD6F5816BB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26401FD2-BAC1-4B81-BB14-BD6F5816BB34}.Release|Any CPU.Build.0 = Release|Any CPU
 		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,10 +37,6 @@ Global
 		{A6182F30-7583-41A5-8971-D33E923E8C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6182F30-7583-41A5-8971-D33E923E8C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6182F30-7583-41A5-8971-D33E923E8C37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C272556-A2AB-4B71-B23E-7508482F69AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C272556-A2AB-4B71-B23E-7508482F69AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C272556-A2AB-4B71-B23E-7508482F69AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C272556-A2AB-4B71-B23E-7508482F69AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3221B6B2-6456-4E03-811D-E964FCC1985C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3221B6B2-6456-4E03-811D-E964FCC1985C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3221B6B2-6456-4E03-811D-E964FCC1985C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,14 +45,6 @@ Global
 		{D834A5AF-AE77-4A3E-888D-29175186EB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D834A5AF-AE77-4A3E-888D-29175186EB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D834A5AF-AE77-4A3E-888D-29175186EB82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01D230A0-489C-40BC-BEF5-35170CD2067C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01D230A0-489C-40BC-BEF5-35170CD2067C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01D230A0-489C-40BC-BEF5-35170CD2067C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01D230A0-489C-40BC-BEF5-35170CD2067C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B19ED59-8CE3-4945-97EE-4182201CA04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B19ED59-8CE3-4945-97EE-4182201CA04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B19ED59-8CE3-4945-97EE-4182201CA04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B19ED59-8CE3-4945-97EE-4182201CA04E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E44753A0-4EB4-4781-90F7-780147AD54F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E44753A0-4EB4-4781-90F7-780147AD54F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E44753A0-4EB4-4781-90F7-780147AD54F4}.Release|Any CPU.ActiveCfg = Release|Any CPU

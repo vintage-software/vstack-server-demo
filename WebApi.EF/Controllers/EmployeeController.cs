@@ -1,8 +1,8 @@
-﻿using Services.EF.Converters;
-using Services.EF.DtoServices;
-using Services.EF.Mappers;
-using Services.EF.Services;
-using Dto = Services.EF.Dto;
+﻿using Services.Converters;
+using Services.DtoServices;
+using Services.Mappers;
+using Services.Services;
+using Dto = Services.Dto;
 
 namespace WebApi.Controllers
 {

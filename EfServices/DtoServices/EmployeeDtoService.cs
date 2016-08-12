@@ -4,7 +4,7 @@ using System.Linq;
 using Vstack.Services.General;
 using Vstack.Services.Services;
 
-namespace Services.EF.DtoServices
+namespace Services.DtoServices
 {
     public class EmployeeDtoService
         : BaseUndeletedDtoService<Dto.Employee, Domain.Employee, Mappers.EmployeeMapper, Converters.EmployeeConverter, Services.EmployeeService, General.Permissions>

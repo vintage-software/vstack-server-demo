@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using Vstack.Services.Filters;
 
-namespace Services.EF.Filters
+namespace Services.Filters
 {
     public class ByDateHired : IFilter<Employee>
     {

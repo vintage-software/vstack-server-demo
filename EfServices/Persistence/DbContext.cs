@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using Vstack.Services.Data.EntityFramework;
 
-namespace Services.EF.Persistence
+namespace Services.Persistence
 {
     public class DbContext : VstackEfDbContext
     {

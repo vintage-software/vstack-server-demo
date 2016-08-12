@@ -1,13 +1,13 @@
 ﻿using Domain;
 using Microsoft.AspNet.Identity;
-using Services.EF.General;
-using Services.EF.Services;
+using Services.General;
+using Services.Services;
 using System.Linq;
 using System.Security.Claims;
 using Vstack.Legacy.Api.Startup;
 using Vstack.Services.Security;
 
-namespace WebApi.EF.Authentication
+namespace WebApi.Authentication
 {
     public class ClaimsProvider : IClaimsProvider<Permissions>
     {

@@ -1,6 +1,6 @@
 ﻿using Vstack.Services.Converters;
 
-namespace Services.EF.Converters
+namespace Services.Converters
 {
     public class EmployeeConverter
         : BaseConverter<Dto.Employee, Domain.Employee, General.Permissions>

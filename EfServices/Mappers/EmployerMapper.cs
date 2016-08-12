@@ -1,8 +1,8 @@
 ﻿using Domain;
-using Services.EF.Persistence;
+using Services.Persistence;
 using Vstack.Services.Mappers;
 
-namespace Services.EF.Mappers
+namespace Services.Mappers
 {
     public class EmployerMapper : BaseEfMapper<DbContext, Employer>
     {

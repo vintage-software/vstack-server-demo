@@ -1,8 +1,8 @@
 ﻿using Domain;
-using Services.EF.Mappers;
+using Services.Mappers;
 using Vstack.Services.Services;
 
-namespace Services.EF.Services
+namespace Services.Services
 {
     public class EmployeeService : BaseService<Employee, EmployeeMapper>
     {

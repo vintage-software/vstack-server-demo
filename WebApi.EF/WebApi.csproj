@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApi.EF</RootNamespace>
-    <AssemblyName>WebApi.EF</AssemblyName>
+    <RootNamespace>WebApi</RootNamespace>
+    <AssemblyName>WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -146,9 +146,9 @@
       <Project>{d834a5af-ae77-4a3e-888d-29175186eb82}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EfServices\Services.EF.csproj">
+    <ProjectReference Include="..\EfServices\Services.csproj">
       <Project>{3221b6b2-6456-4e03-811d-e964fcc1985c}</Project>
-      <Name>Services.EF</Name>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

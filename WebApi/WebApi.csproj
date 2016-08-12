@@ -145,10 +145,6 @@
       <Project>{3221B6B2-6456-4E03-811D-E964FCC1985C}</Project>
       <Name>Services.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{26401fd2-bac1-4b81-bb14-bd6f5816bb34}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

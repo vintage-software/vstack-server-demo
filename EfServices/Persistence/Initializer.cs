@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using Vstack.Extensions;
 
-namespace Services.EF.Persistence
+namespace Services.Persistence
 {
     public class Initializer : DropCreateDatabaseIfModelChanges<DbContext>
     {

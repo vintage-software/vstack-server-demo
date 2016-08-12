@@ -1,6 +1,6 @@
 ﻿using Vstack.Services.General;
 
-namespace Services.EF.General
+namespace Services.General
 {
     public class Permissions : RestPermissions
     {

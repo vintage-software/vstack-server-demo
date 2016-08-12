@@ -1,7 +1,7 @@
-﻿using Services.EF.Dto;
+﻿using Services.Dto;
 using Vstack.Services.Converters;
 
-namespace Services.EF.Converters
+namespace Services.Converters
 {
     public class EmployerConverter
         : BaseConverter<Employer, Domain.Employer, General.Permissions>

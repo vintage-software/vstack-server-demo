@@ -3,7 +3,7 @@ using System.Linq;
 using Vstack.Services.General;
 using Vstack.Services.Services;
 
-namespace Services.EF.DtoServices
+namespace Services.DtoServices
 {
     public class EmployerDtoService
         : BaseUndeletedDtoService<Dto.Employer, Domain.Employer, Mappers.EmployerMapper, Converters.EmployerConverter, Services.EmployerService, General.Permissions>

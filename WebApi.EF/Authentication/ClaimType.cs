@@ -1,4 +1,4 @@
-﻿namespace WebApi.EF.Authentication
+﻿namespace WebApi.Authentication
 {
     public enum ClaimType
     {

@@ -1,4 +1,4 @@
-﻿using Services.EF.General;
+﻿using Services.General;
 using System.Security.Claims;
 using Vstack.Legacy.Api.Web.Controllers;
 using Vstack.Services.Converters;
@@ -6,7 +6,7 @@ using Vstack.Services.Domain;
 using Vstack.Services.Dto;
 using Vstack.Services.General;
 using Vstack.Services.Services;
-using WebApi.EF.Authentication;
+using WebApi.Authentication;
 using System;
 
 namespace WebApi.Controllers

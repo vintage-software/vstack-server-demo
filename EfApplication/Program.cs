@@ -1,12 +1,12 @@
 ﻿using Domain;
-using Services.EF.Filters;
-using Services.EF.Services;
+using Services.Filters;
+using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vstack.Services.General;
 
-namespace Application.EF
+namespace Application
 {
     public static class Program
     {

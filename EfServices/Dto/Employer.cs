@@ -1,6 +1,6 @@
 ﻿using Vstack.Services.Dto;
 
-namespace Services.EF.Dto
+namespace Services.Dto
 {
     public class Employer : SecureDto, IRestDto
     {
