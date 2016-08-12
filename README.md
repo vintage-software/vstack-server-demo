@@ -10,3 +10,4 @@ The project uses a local database that will be automatically created for you whe
 - [Vstack Services Elastic](https://github.com/vintage-software/vstack-services-elastic)
 - [Vstack Utilities](https://github.com/vintage-software/vstack-utilities)
 - [Vstack Extensions](https://github.com/vintage-software/vstack-extensions)
+- [Vstack Legacy Api](https://github.com/vintage-software/vstack-legacy-api)
