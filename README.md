@@ -6,7 +6,7 @@ The project uses a local database that will be automatically created for you whe
 
 ### Vstack Hub Repository
 
-Check out the [Vstack Hub Repository](https://github.com/vintage-software/vstack)
+Check out the [Vstack Hub Repository](https://github.com/vintage-software/vstack) for more information about Vstack.
 
 ### Dependencies
 
