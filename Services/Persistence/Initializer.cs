@@ -1,27 +1,13 @@
 ﻿using Domain;
-using System.Reflection;
+using System.Data.Entity;
 using Vstack.Extensions;
-using Vstack.Services.Data.EntityFramework;
-using Vstack.Services.Filters;
 
 namespace Services.Persistence
 {
-    public class Initializer : VstackDbInitializer<DbContext>
+    public class Initializer : DropCreateDatabaseIfModelChanges<DbContext>
     {
-        public Initializer(Assembly assembly)
-            : base(
-                  assembly.GetChildInstances<IEntityEqualityStoredProcedurePrimaryFilter>(),
-                  assembly.GetChildInstances<IEntityCustomStoredProcedurePrimaryFilter>())
-        {
-        }
-
         protected override void Seed(DbContext context)
         {
-            if (!context.IsInitialized())
-            {
-                return;
-            }
-
             context.ValidateNotNullParameter(nameof(context));
 
             Employer employer = new Employer("Flannigan Corp");

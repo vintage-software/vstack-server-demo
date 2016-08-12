@@ -1,13 +1,10 @@
 ﻿using Domain;
-using Services.Mappers;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+using System.Linq;
 using Vstack.Services.Filters;
 
 namespace Services.Filters
 {
-    public class ByName : EntityEqualityStoredProcedurePrimaryFilter<Employee, EmployeeMapper>, IPrimaryFilter<Employee, EmployeeMapper>
+    public class ByName : IFilter<Employee>
     {
         private readonly string name;
 
@@ -16,20 +13,9 @@ namespace Services.Filters
             this.name = name;
         }
 
-        public override IEnumerable<Expression<Func<Employee, object>>> Expressions
+        public IQueryable<Employee> Filter(IQueryable<Employee> domains)
         {
-            get
-            {
-                return new Expression<Func<Employee, object>>[]
-                {
-                    i => i.Name
-                };
-            }
-        }
-
-        public override object[] GetParameters()
-        {
-            return new object[] { this.name };
+            return domains.Where(i => i.Name == this.name);
         }
     }
 }

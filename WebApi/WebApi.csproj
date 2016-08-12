@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7B19ED59-8CE3-4945-97EE-4182201CA04E}</ProjectGuid>
+    <ProjectGuid>{E44753A0-4EB4-4781-90F7-780147AD54F4}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -114,6 +114,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\ClaimsProvider.cs" />
+    <Compile Include="Authentication\ClaimType.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,9 +146,9 @@
       <Project>{d834a5af-ae77-4a3e-888d-29175186eb82}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EfServices\Services.EF.csproj">
-      <Project>{3221B6B2-6456-4E03-811D-E964FCC1985C}</Project>
-      <Name>Services.EF</Name>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{3221b6b2-6456-4e03-811d-e964fcc1985c}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -159,9 +164,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>11604</DevelopmentServerPort>
+          <DevelopmentServerPort>11616</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:11604/</IISUrl>
+          <IISUrl>http://localhost:11616/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -1,16 +1,15 @@
 ﻿using Domain;
 using System.Data.Entity;
-using System.Reflection;
 using Vstack.Services.Data.EntityFramework;
 
 namespace Services.Persistence
 {
-    public class DbContext : VstackDbContext
+    public class DbContext : VstackEfDbContext
     {
         public DbContext()
-            : base("Demo")
+            : base("EfDemo")
         {
-            Database.SetInitializer(new Initializer(Assembly.GetExecutingAssembly()));
+            Database.SetInitializer(new Initializer());
         }
 
         public DbSet<Employee> Employees { get; set; }
