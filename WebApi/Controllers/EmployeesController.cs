@@ -6,8 +6,8 @@ using Dto = Services.Dto;
 
 namespace WebApi.Controllers
 {
-    public class EmployerController
-        : BaseController<Dto.Employer, Domain.Employer, EmployerMapper, EmployerConverter, EmployerService, EmployerDtoService>
+    public class EmployeesController
+        : BaseController<Dto.Employee, Domain.Employee, EmployeeMapper, EmployeeConverter, EmployeeService, EmployeeDtoService>
     {
     }
 }
