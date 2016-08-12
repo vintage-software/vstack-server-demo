@@ -4,7 +4,11 @@ A complete server-side project including a web api built using the Vstack librar
 
 The project uses a local database that will be automatically created for you when you run the project.
 
-## Dependencies
+### Vstack Hub Repository
+
+Check out the [Vstack Hub Repository](https://github.com/vintage-software/vstack)
+
+### Dependencies
 
 - [Vstack Services](https://github.com/vintage-software/vstack-services)
 - [Vstack Services Elastic](https://github.com/vintage-software/vstack-services-elastic)
