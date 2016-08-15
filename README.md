@@ -1,6 +1,6 @@
 # vstack-server-demo
 
-A complete server-side project including a web api built using the Vstack libraries. The api supports permission checks, security features, and basic CRUD operations on all domain objects out of the box.
+A complete server-side demo including a web api built using the Vstack framework. The api supports permission checks, security features, and basic CRUD operations on all domain objects out of the box.
 
 The project uses a local database that will be automatically created for you when you run the project.
 
