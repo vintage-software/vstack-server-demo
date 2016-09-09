@@ -143,25 +143,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\vstack-extensions\Vstack.Extensions.csproj">
+    <ProjectReference Include="..\..\vstack-extensions\Vstack.Extensions\Vstack.Extensions.csproj">
       <Project>{029ecbe3-6e0e-498e-80a7-bad385891c91}</Project>
       <Name>Vstack.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\vstack-legacy-api\Vstack.Legacy.Api.csproj">
+    <ProjectReference Include="..\..\vstack-legacy-api\Vstack.Legacy.Api\Vstack.Legacy.Api.csproj">
       <Project>{726cc1f8-db43-454e-a79a-9c1845291401}</Project>
       <Name>Vstack.Legacy.Api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\vstack-services-elastic\Vstack.Services.Elastic.csproj">
-      <Project>{fdf26743-2b8d-40ed-9d23-7cec7ddfc002}</Project>
-      <Name>Vstack.Services.Elastic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\vstack-services\Vstack.Services.csproj">
+    <ProjectReference Include="..\..\vstack-services\Vstack.Services\Vstack.Services.csproj">
       <Project>{86d88ab5-bd70-43af-8538-a3f9cd53e979}</Project>
       <Name>Vstack.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\vstack-utilities\Vstack.Utilities.csproj">
-      <Project>{a6182f30-7583-41a5-8971-d33e923e8c37}</Project>
-      <Name>Vstack.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{d834a5af-ae77-4a3e-888d-29175186eb82}</Project>
