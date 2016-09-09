@@ -11,6 +11,7 @@ namespace Services.Converters
             {
                 Id = this.Domain.Id,
                 EmployerId = this.Domain.EmployerId,
+                EmailAddress = this.Domain.EmailAddress,
                 Name = this.Domain.Name,
                 SocialSecurityNumber = this.GetSocialSecurityNumber(),
                 AnnualSalary = this.GetAnnualSalary(),

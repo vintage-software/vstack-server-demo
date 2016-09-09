@@ -57,8 +57,9 @@
     <Compile Include="DtoServices\EmployeeDtoService.cs" />
     <Compile Include="Dto\Employer.cs" />
     <Compile Include="Dto\Employee.cs" />
-    <Compile Include="Filters\ByDateHired.cs" />
-    <Compile Include="Filters\ByName.cs" />
+    <Compile Include="Filters\Employee\ByDateHired.cs" />
+    <Compile Include="Filters\Employee\ByEmailAddress.cs" />
+    <Compile Include="Filters\Employee\ByName.cs" />
     <Compile Include="General\Permissions.cs" />
     <Compile Include="Mappers\EmployerMapper.cs" />
     <Compile Include="Mappers\EmployeeMapper.cs" />

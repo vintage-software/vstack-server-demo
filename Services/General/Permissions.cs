@@ -36,6 +36,11 @@ namespace Services.General
             return this.superUserId;
         }
 
+        public int? GetEmployeeId()
+        {
+            return this.employeeId;
+        }
+
         public bool IsSuperUser()
         {
             return this.IsInternal() || this.superUserId.HasValue;

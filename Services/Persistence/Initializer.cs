@@ -14,7 +14,7 @@ namespace Services.Persistence
             context.Employers.Add(employer);
             context.SaveChanges();
 
-            context.Employees.Add(new Employee(employer.Id, "Ted", "555-55-5555", "Password123"));
+            context.Employees.Add(new Employee(employer.Id, "ted@example.com", "Ted", "555-55-5555", "Password123"));
             context.SaveChanges();
 
             base.Seed(context);

@@ -1,11 +1,11 @@
-﻿using Domain;
-using System;
+﻿using System;
 using System.Linq;
 using Vstack.Services.Filters;
+using Dmn = Domain;
 
-namespace Services.Filters
+namespace Services.Filters.Employee
 {
-    public class ByDateHired : IFilter<Employee>
+    public class ByDateHired : IFilter<Dmn.Employee>
     {
         private readonly DateTime? from;
 
@@ -17,7 +17,7 @@ namespace Services.Filters
             this.to = to;
         }
 
-        public IQueryable<Employee> Filter(IQueryable<Employee> domains)
+        public IQueryable<Dmn.Employee> Filter(IQueryable<Dmn.Employee> domains)
         {
             return domains.Where(i =>
                 (this.from < i.UtcDateCreated || this.from == null)

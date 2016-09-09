@@ -1,15 +1,23 @@
-﻿using Vstack.Services.Domain;
+﻿using Domain.General;
+using System;
+using Vstack.Services.Domain;
+using Vstack.Services.Security;
 
 namespace Domain
 {
-    public class Employee : BaseDomain
+    public class Employee : BaseDomain, IVstackBaseUser
     {
-        public Employee(int employerId, string name, string socialSecurityNumber, string password)
+        private readonly UserAuthenticationHelper userAuthenticationHelper = new DemoUserAuthenticationHelper();
+
+        public Employee(int employerId, string emailAddress, string name, string socialSecurityNumber, string password)
         {
             this.EmployerId = employerId;
+            this.EmailAddress = emailAddress;
             this.Name = name;
             this.SocialSecurityNumber = socialSecurityNumber;
             this.Password = password;
+
+            this.userAuthenticationHelper.InitializeUser(this);
         }
 
         private Employee()
@@ -18,11 +26,13 @@ namespace Domain
 
         public int EmployerId { get; private set; }
 
+        public string EmailAddress { get; set; }
+
+        public string Password { get; set; }
+
         public string Name { get; private set; }
 
         public string SocialSecurityNumber { get; private set; }
-
-        public string Password { get; private set; }
 
         public decimal AnnualSalary { get; private set; }
 
@@ -32,7 +42,15 @@ namespace Domain
 
         public Employer Employer { get; private set; }
 
-        public string SecurityStamp { get; private set; }
+        public string SecurityStamp { get; set; }
+
+        public int AccessFailedCount { get; set; }
+
+        public string UniqueKey { get; set; }
+
+        public DateTime? UtcDateLockoutEnds { get; set; }
+
+        public DateTime? UtcDatePasswordLastSet { get; set; }
 
         public void UpdateInternalNotes(int superUserId, string internalNotes)
         {

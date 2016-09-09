@@ -1,10 +1,10 @@
-﻿using Domain;
-using System.Linq;
+﻿using System.Linq;
 using Vstack.Services.Filters;
+using Dmn = Domain;
 
-namespace Services.Filters
+namespace Services.Filters.Employee
 {
-    public class ByName : IFilter<Employee>
+    public class ByName : IFilter<Dmn.Employee>
     {
         private readonly string name;
 
@@ -13,7 +13,7 @@ namespace Services.Filters
             this.name = name;
         }
 
-        public IQueryable<Employee> Filter(IQueryable<Employee> domains)
+        public IQueryable<Dmn.Employee> Filter(IQueryable<Dmn.Employee> domains)
         {
             return domains.Where(i => i.Name == this.name);
         }
