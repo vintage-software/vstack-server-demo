@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Web.Http;
 using Vstack.Extensions;
+using Vstack.Legacy.Api.General;
 using Vstack.Legacy.Api.Web.General;
 using Vstack.Services.Web.General;
 
@@ -20,6 +21,7 @@ namespace WebApi.App_Start
             settings.ContractResolver = new WebApiContractResolver();
             settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
 
+            config.XsrfSuppressDefaultHostAuthentication();
             config.MapHttpAttributeRoutes(new WebApiDirectRouteProvider());
         }
     }
