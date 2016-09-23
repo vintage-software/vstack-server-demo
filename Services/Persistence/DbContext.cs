@@ -7,7 +7,7 @@ namespace Services.Persistence
     public class DbContext : VstackEfDbContext
     {
         public DbContext()
-            : base("Demo")
+            : base("NoteApplication")
         {
             Database.SetInitializer(new Initializer());
         }

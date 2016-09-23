@@ -3,10 +3,10 @@ using Vstack.Services.Security;
 
 namespace Domain.General
 {
-    public class DemoUserAuthenticationHelper
+    public class NoteApplicationUserAuthenticationHelper
         : UserAuthenticationHelper
     {
-        public DemoUserAuthenticationHelper()
+        public NoteApplicationUserAuthenticationHelper()
             : base(45, TimeSpan.FromMinutes(5), TimeSpan.FromHours(1), 7)
         {
         }

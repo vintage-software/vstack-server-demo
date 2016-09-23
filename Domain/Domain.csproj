@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="Employee.cs" />
     <Compile Include="Employer.cs" />
-    <Compile Include="General\DemoUserAuthenticationHelper.cs" />
+    <Compile Include="General\NoteApplicationUserAuthenticationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

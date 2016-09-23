@@ -7,7 +7,7 @@ namespace Domain
 {
     public class Employee : BaseDomain, IVstackBaseUser
     {
-        private readonly UserAuthenticationHelper userAuthenticationHelper = new DemoUserAuthenticationHelper();
+        private readonly UserAuthenticationHelper userAuthenticationHelper = new NoteApplicationUserAuthenticationHelper();
 
         public Employee(int employerId, string emailAddress, string name, string socialSecurityNumber, string password)
         {

@@ -9,7 +9,7 @@ namespace Services.Services
 {
     public class EmployeeService : BaseService<Dmn.Employee, EmployeeMapper>
     {
-        private readonly UserAuthenticationHelper userAuthenticationHelper = new DemoUserAuthenticationHelper();
+        private readonly UserAuthenticationHelper userAuthenticationHelper = new NoteApplicationUserAuthenticationHelper();
 
         public EmployeeService()
             : base(new EmployeeMapper())
