@@ -2,6 +2,6 @@
 {
     public enum ClaimType
     {
-        EmployeeId
+        AccountId
     }
 }

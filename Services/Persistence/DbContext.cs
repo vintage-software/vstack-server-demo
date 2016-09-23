@@ -12,8 +12,6 @@ namespace Services.Persistence
             Database.SetInitializer(new Initializer());
         }
 
-        public DbSet<Employee> Employees { get; set; }
-
-        public DbSet<Employer> Employers { get; set; }
+        public DbSet<Account> Accounts { get; set; }
     }
 }

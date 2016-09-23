@@ -2,9 +2,9 @@
 using Vstack.Services.Filters;
 using Dmn = Domain;
 
-namespace Services.Filters.Employee
+namespace Services.Filters.Account
 {
-    public class ByEmailAddress : IFilter<Dmn.Employee>
+    public class ByEmailAddress : IFilter<Dmn.Account>
     {
         private readonly string emailAddress;
 
@@ -13,7 +13,7 @@ namespace Services.Filters.Employee
             this.emailAddress = emailAddress;
         }
 
-        public IQueryable<Dmn.Employee> Filter(IQueryable<Dmn.Employee> domains)
+        public IQueryable<Dmn.Account> Filter(IQueryable<Dmn.Account> domains)
         {
             return domains.Where(i => i.EmailAddress == this.emailAddress);
         }

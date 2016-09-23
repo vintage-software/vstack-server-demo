@@ -11,19 +11,19 @@ namespace WebApi.Authentication
 {
     public class ClaimsProvider : IClaimsProvider<Permissions>
     {
-        private readonly EmployeeService employeeService = new EmployeeService();
+        private readonly AccountService accountService = new AccountService();
 
         public ClaimsIdentity GetClaims(int userId)
         {
-            Employee employee = this.LoadEmployee(userId);
+            Account account = this.LoadAccount(userId);
 
-            int employeeId = userId;
+            int accountId = userId;
 
             ClaimsIdentity claims = new ClaimsIdentity(DefaultAuthenticationTypes.ApplicationCookie);
             claims.AddClaims(new Claim[] {
-                new Claim(VstackClaimTypes.UserId, employee.Id.ToString()),
-                new Claim(VstackClaimTypes.SecurityStamp, employee.SecurityStamp),
-                new Claim(ClaimType.EmployeeId.ToString(), employeeId.ToString())
+                new Claim(VstackClaimTypes.UserId, account.Id.ToString()),
+                new Claim(VstackClaimTypes.SecurityStamp, account.SecurityStamp),
+                new Claim(ClaimType.AccountId.ToString(), accountId.ToString())
             });
 
             return claims;
@@ -36,12 +36,12 @@ namespace WebApi.Authentication
 
         public Permissions GetPermissions(ClaimsIdentity claims)
         {
-            return new Permissions(GetIntClaim(claims, ClaimType.EmployeeId));
+            return new Permissions(GetIntClaim(claims, ClaimType.AccountId));
         }
 
-        private Employee LoadEmployee(int employeeId)
+        private Account LoadAccount(int accountId)
         {
-            return this.employeeService.Get(employeeId)
+            return this.accountService.Get(accountId)
                 .FirstOrDefault();
         }
 

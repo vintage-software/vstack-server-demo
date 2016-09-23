@@ -7,21 +7,21 @@ using Dmn = Domain;
 
 namespace Services.Services
 {
-    public class EmployeeService : BaseService<Dmn.Employee, EmployeeMapper>
+    public class AccountService : BaseService<Dmn.Account, AccountMapper>
     {
         private readonly UserAuthenticationHelper userAuthenticationHelper = new NoteApplicationUserAuthenticationHelper();
 
-        public EmployeeService()
-            : base(new EmployeeMapper())
+        public AccountService()
+            : base(new AccountMapper())
         {
         }
 
-        public AuthenticationStatus AuthenticateWithPassword(Dmn.Employee employee, string password)
+        public AuthenticationStatus AuthenticateWithPassword(Dmn.Account account, string password)
         {
-            employee.ValidateDomainParameter(nameof(employee));
+            account.ValidateDomainParameter(nameof(account));
 
-            AuthenticationStatus authenticateStatus = this.userAuthenticationHelper.Authenticate(employee, password);
-            RestStatus saveResult = this.Save(employee).Status;
+            AuthenticationStatus authenticateStatus = this.userAuthenticationHelper.Authenticate(account, password);
+            RestStatus saveResult = this.Save(account).Status;
 
             if (saveResult != RestStatus.Success)
             {

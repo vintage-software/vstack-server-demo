@@ -162,9 +162,8 @@
     <Compile Include="Authentication\ClaimsProvider.cs" />
     <Compile Include="Authentication\ClaimType.cs" />
     <Compile Include="Authentication\SignInManager.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\EmployersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

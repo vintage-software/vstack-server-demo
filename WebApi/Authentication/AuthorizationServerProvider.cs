@@ -1,6 +1,6 @@
 ﻿using Domain;
 using Microsoft.Owin.Security.OAuth;
-using Services.Filters.Employee;
+using Services.Filters.Account;
 using Services.General;
 using Services.Services;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace WebApi.Authentication
 {
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        private readonly EmployeeService employeeService = new EmployeeService();
+        private readonly AccountService employeeService = new AccountService();
 
         private readonly ClaimsProvider claimsProvider = new ClaimsProvider();
 
@@ -28,7 +28,7 @@ namespace WebApi.Authentication
         public override Task TokenEndpointResponse(OAuthTokenEndpointResponseContext context)
         {
             Permissions permissions = this.claimsProvider.GetPermissions(context.Identity);
-            context.AdditionalResponseParameters.Add("userId", permissions.GetEmployeeId());
+            context.AdditionalResponseParameters.Add("userId", permissions.GetAccountId());
             return base.TokenEndpointResponse(context);
         }
 
@@ -46,7 +46,7 @@ namespace WebApi.Authentication
 
         private void GrantUserCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            Employee employee = this.employeeService.Get()
+            Account employee = this.employeeService.Get()
                 .Filter(new ByEmailAddress(context.UserName))
                 .FirstOrDefault();
 

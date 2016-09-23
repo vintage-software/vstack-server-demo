@@ -53,23 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\EmployerConverter.cs" />
-    <Compile Include="Converters\EmployeeConverter.cs" />
-    <Compile Include="DtoServices\EmployerDtoService.cs" />
-    <Compile Include="DtoServices\EmployeeDtoService.cs" />
-    <Compile Include="Dto\Employer.cs" />
-    <Compile Include="Dto\Employee.cs" />
-    <Compile Include="Filters\Employee\ByDateHired.cs" />
-    <Compile Include="Filters\Employee\ByEmailAddress.cs" />
-    <Compile Include="Filters\Employee\ByName.cs" />
+    <Compile Include="Converters\AccountConverter.cs" />
+    <Compile Include="DtoServices\AccountDtoService.cs" />
+    <Compile Include="Dto\Account.cs" />
+    <Compile Include="Filters\Account\ByEmailAddress.cs" />
+    <Compile Include="Filters\Account\ByName.cs" />
     <Compile Include="General\Permissions.cs" />
-    <Compile Include="Mappers\EmployerMapper.cs" />
-    <Compile Include="Mappers\EmployeeMapper.cs" />
+    <Compile Include="Mappers\AccountMapper.cs" />
     <Compile Include="Persistence\DbContext.cs" />
     <Compile Include="Persistence\Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\EmployerService.cs" />
-    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\AccountService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\vstack-extensions\Vstack.Extensions\Vstack.Extensions.csproj">

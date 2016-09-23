@@ -16,18 +16,11 @@ namespace WebApi.Authentication
             this.authenticationManager = authenticationManager;
         }
 
-        public void SignIn(int employeeId, bool isPersistent)
+        public void SignIn(int accountId, bool isPersistent)
         {
-            ClaimsIdentity identity = this.claimsProvider.GetClaims(employeeId);
+            ClaimsIdentity identity = this.claimsProvider.GetClaims(accountId);
             Permissions permissions = this.claimsProvider.GetPermissions(identity);
             this.authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = isPersistent }, identity);
-        }
-
-        public void SuperSignIn(int superUserId)
-        {
-            ClaimsIdentity identity = this.claimsProvider.GetSuperClaims(superUserId);
-            Permissions permissions = this.claimsProvider.GetPermissions(identity);
-            this.authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, identity);
         }
 
         public void SignOut()
