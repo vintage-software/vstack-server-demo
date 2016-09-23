@@ -19,6 +19,7 @@ namespace Services.Persistence
             };
 
             context.Accounts.AddRange(accounts);
+            context.Notebooks.Add(new Notebook("Davids note", "this is the content", 1));
             context.SaveChanges();
 
             base.Seed(context);

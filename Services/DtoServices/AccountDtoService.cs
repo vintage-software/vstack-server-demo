@@ -43,9 +43,7 @@ namespace Services.DtoServices
 
         protected override DtoRestStatus Update(Dmn.Account domain, Dto.Account dto)
         {
-            bool isEmployee = this.Permissions.HasPermissionsForAccount(domain.Id);
-
-            if (isEmployee == false)
+            if (this.Permissions.HasPermissionsForAccount(domain.Id) == false)
             {
                 return DtoRestStatus.Forbidden;
             }

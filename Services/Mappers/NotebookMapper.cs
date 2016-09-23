@@ -4,9 +4,9 @@ using Vstack.Services.Mappers;
 
 namespace Services.Mappers
 {
-    public class AccountMapper : BaseEfMapper<DbContext, Account>
+    public class NotebookMapper : BaseEfMapper<DbContext, Notebook>
     {
-        public AccountMapper()
+        public NotebookMapper()
             : base(new DbContext())
         {
         }

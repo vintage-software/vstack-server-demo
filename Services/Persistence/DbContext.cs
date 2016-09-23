@@ -13,5 +13,9 @@ namespace Services.Persistence
         }
 
         public DbSet<Account> Accounts { get; set; }
+
+        public DbSet<Note> Notes { get; set; }
+
+        public DbSet<Notebook> Notebooks { get; set; }
     }
 }

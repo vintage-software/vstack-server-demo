@@ -53,16 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\NotebookConverter.cs" />
+    <Compile Include="Converters\NoteConverter.cs" />
     <Compile Include="Converters\AccountConverter.cs" />
+    <Compile Include="DtoServices\NotebookDtoService.cs" />
+    <Compile Include="DtoServices\NoteDtoService.cs" />
     <Compile Include="DtoServices\AccountDtoService.cs" />
+    <Compile Include="Dto\Notebook.cs" />
+    <Compile Include="Dto\Note.cs" />
     <Compile Include="Dto\Account.cs" />
     <Compile Include="Filters\Account\ByEmailAddress.cs" />
     <Compile Include="Filters\Account\ByName.cs" />
     <Compile Include="General\Permissions.cs" />
+    <Compile Include="Mappers\NotebookMapper.cs" />
+    <Compile Include="Mappers\NoteMapper.cs" />
     <Compile Include="Mappers\AccountMapper.cs" />
     <Compile Include="Persistence\DbContext.cs" />
     <Compile Include="Persistence\Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\NotebookService.cs" />
+    <Compile Include="Services\NoteService.cs" />
     <Compile Include="Services\AccountService.cs" />
   </ItemGroup>
   <ItemGroup>

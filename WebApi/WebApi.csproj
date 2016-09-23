@@ -162,6 +162,8 @@
     <Compile Include="Authentication\ClaimsProvider.cs" />
     <Compile Include="Authentication\ClaimType.cs" />
     <Compile Include="Authentication\SignInManager.cs" />
+    <Compile Include="Controllers\NotebooksController.cs" />
+    <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Global.asax.cs">

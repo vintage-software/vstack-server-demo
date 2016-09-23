@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Notebook.cs" />
+    <Compile Include="Note.cs" />
     <Compile Include="Account.cs" />
     <Compile Include="General\NoteApplicationUserAuthenticationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
