@@ -10,7 +10,6 @@ namespace Services.Converters
             return new Dto.Account()
             {
                 Id = this.Domain.Id,
-                AccountId = this.Domain.AccountId,
                 EmailAddress = this.Domain.EmailAddress,
                 FirstName = this.Domain.FirstName,
                 LastName = this.Domain.LastName,

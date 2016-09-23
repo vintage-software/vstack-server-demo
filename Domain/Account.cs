@@ -9,9 +9,8 @@ namespace Domain
     {
         private readonly UserAuthenticationHelper userAuthenticationHelper = new NoteApplicationUserAuthenticationHelper();
 
-        public Account(int accountId, string emailAddress, string firstName, string lastName, string password)
+        public Account(string emailAddress, string firstName, string lastName, string password)
         {
-            this.AccountId = accountId;
             this.EmailAddress = emailAddress;
             this.FirstName = firstName;
             this.LastName = lastName;
