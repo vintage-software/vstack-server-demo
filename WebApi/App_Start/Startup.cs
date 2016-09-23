@@ -57,7 +57,7 @@ namespace WebApi.App_Start
 
         public void Configuration(IAppBuilder app)
         {
-            this.SetupCookieAuth(app);
+            this.SetupAuthentication(app);
         }
 
         protected override void OnApplyRedirect(CookieApplyRedirectContext context)

@@ -7,7 +7,7 @@ using Dmn = Domain;
 namespace Services.DtoServices
 {
     public class EmployeeDtoService
-        : BaseUndeletedDtoService<Dto.Employee, Dmn.Employee, Mappers.EmployeeMapper, Converters.EmployeeConverter, Services.EmployeeService, General.Permissions>
+        : BaseUndeletedSingleDtoService<Dto.Employee, Dmn.Employee, Mappers.EmployeeMapper, Converters.EmployeeConverter, Services.EmployeeService, General.Permissions>
     {
         public EmployeeDtoService()
             : this(General.Permissions.Empty)
