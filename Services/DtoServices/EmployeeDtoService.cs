@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Services.Dto;
+using System.Collections.Generic;
 using System.Linq;
 using Vstack.Services.General;
 using Vstack.Services.Services;
-using Dmn = Domain;
 
 namespace Services.DtoServices
 {
     public class EmployeeDtoService
-        : BaseUndeletedDtoService<Dto.Employee, Dmn.Employee, Mappers.EmployeeMapper, Converters.EmployeeConverter, Services.EmployeeService, General.Permissions>
+        : BaseUndeletedDtoService<Dto.Employee, Domain.Employee, Mappers.EmployeeMapper, Converters.EmployeeConverter, Services.EmployeeService, General.Permissions>
     {
         public EmployeeDtoService()
             : this(General.Permissions.Empty)
@@ -19,7 +19,7 @@ namespace Services.DtoServices
         {
         }
 
-        protected override DtoRestStatus CanDelete(Dmn.Employee domain)
+        protected override DtoRestStatus CanDelete(Domain.Employee domain)
         {
             return this.Permissions.IsSuperUser() ? DtoRestStatus.Success : DtoRestStatus.Forbidden;
         }
@@ -34,18 +34,18 @@ namespace Services.DtoServices
             return DtoRestStatus.BadRequest;
         }
 
-        protected override DtoActionResult<Dmn.Employee> Construct(Dto.Employee dto)
+        protected override IEnumerable<DtoActionResult<Domain.Employee>> ConstructMany(IEnumerable<Employee> dtos)
         {
-            if (this.Permissions.HasPermissionsForEmployer(dto.EmployerId) == false)
+            if (dtos.Any(dto => this.Permissions.HasPermissionsForEmployer(dto.EmployerId) == false))
             {
-                return new DtoActionResult<Dmn.Employee>(DtoRestStatus.Forbidden);
+                return new List<DtoActionResult<Domain.Employee>>() { new DtoActionResult<Domain.Employee>(DtoRestStatus.Forbidden) };
             }
 
-            Dmn.Employee domain = new Dmn.Employee(dto.EmployerId, dto.EmailAddress, dto.Name, dto.SocialSecurityNumber, dto.Password);
-            return new DtoActionResult<Dmn.Employee>(DtoRestStatus.Success, domain);
+            return dtos.Select(dto => new DtoActionResult<Domain.Employee>(
+                DtoRestStatus.Success, new Domain.Employee(dto.EmployerId, dto.EmailAddress, dto.Name, dto.SocialSecurityNumber, dto.Password)));
         }
 
-        protected override DtoRestStatus Update(Dmn.Employee domain, Dto.Employee dto)
+        protected override DtoRestStatus Update(Domain.Employee domain, Dto.Employee dto)
         {
             bool isEmployer = this.Permissions.HasPermissionsForEmployer(domain.EmployerId);
             bool isEmployee = this.Permissions.HasPermissionsForEmployee(domain.Id);

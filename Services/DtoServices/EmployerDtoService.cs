@@ -33,15 +33,14 @@ namespace Services.DtoServices
             return DtoRestStatus.BadRequest;
         }
 
-        protected override DtoActionResult<Domain.Employer> Construct(Dto.Employer dto)
+        protected override IEnumerable<DtoActionResult<Domain.Employer>> ConstructMany(IEnumerable<Dto.Employer> dtos)
         {
-            if (this.Permissions.HasPermissionsForEmployer(dto.Id) == false)
+            if (dtos.Any(dto => this.Permissions.HasPermissionsForEmployer(dto.Id) == false))
             {
-                return new DtoActionResult<Domain.Employer>(DtoRestStatus.Forbidden);
+                return new List<DtoActionResult<Domain.Employer>> { new DtoActionResult<Domain.Employer>(DtoRestStatus.Forbidden) };
             }
 
-            Domain.Employer domain = new Domain.Employer(dto.Name);
-            return new DtoActionResult<Domain.Employer>(DtoRestStatus.Success, domain);
+            return dtos.Select(dto => new DtoActionResult<Domain.Employer>(DtoRestStatus.Success, new Domain.Employer(dto.Name)));
         }
 
         protected override DtoRestStatus Update(Domain.Employer domain, Dto.Employer dto)
