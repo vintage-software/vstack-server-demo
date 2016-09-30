@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Services.Converters;
+using Services.General;
+using Services.Mappers;
+using Services.Services;
+using System.Collections.Generic;
 using System.Linq;
 using Vstack.Services.General;
 using Vstack.Services.Services;
@@ -7,15 +11,15 @@ using Dmn = Domain;
 namespace Services.DtoServices
 {
     public class AccountDtoService
-        : BaseUndeletedSingleDtoService<Dto.Account, Dmn.Account, Mappers.AccountMapper, Converters.AccountConverter, Services.AccountService, General.Permissions>
+        : BaseUndeletedSingleDtoService<Dto.Account, Dmn.Account, AccountMapper, AccountConverter, AccountService, Permissions>
     {
         public AccountDtoService()
-            : this(General.Permissions.Empty)
+            : this(Permissions.Empty)
         {
         }
 
-        public AccountDtoService(General.Permissions permissions)
-            : base(new Services.AccountService(), permissions, false)
+        public AccountDtoService(Permissions permissions)
+            : base(new AccountService(), permissions, false)
         {
         }
 

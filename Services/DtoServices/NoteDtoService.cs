@@ -1,43 +1,42 @@
-﻿using Services.Services;
-using System;
+﻿using Services.Converters;
+using Services.General;
+using Services.Mappers;
+using Services.Services;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using Vstack.Services.General;
+using Vstack.Services.Queryable;
 using Vstack.Services.Services;
 using Dmn = Domain;
 
 namespace Services.DtoServices
 {
     public class NoteDtoService
-        : BaseUndeletedSingleDtoService<Dto.Note, Dmn.Note, Mappers.NoteMapper, Converters.NoteConverter, NoteService, General.Permissions>
+        : BaseUndeletedDtoService<Dto.Note, Dmn.Note, NoteMapper, NoteConverter, NoteService, Permissions>
     {
         private readonly NotebookService notebookService = new NotebookService();
 
         public NoteDtoService()
-            : this(General.Permissions.Empty)
+            : this(Permissions.Empty)
         {
         }
 
-        public NoteDtoService(General.Permissions permissions)
+        public NoteDtoService(Permissions permissions)
             : base(new NoteService(), permissions, false)
         {
         }
 
-        protected override IEnumerable<Expression<Func<Dmn.Note, object>>> UpdateIncludes
+        protected override IEnumerable<DtoActionResult<Dmn.Note>> CanDeleteMany(VsIncludeEnumerable<Dmn.Note, NoteMapper> domains)
         {
-            get
-            {
-                return new Expression<Func<Dmn.Note, object>>[]
+            return domains
+                .Include(domain => domain.Notebook)
+                .Select(domain =>
                 {
-                    note => note.Notebook
-                };
-            }
-        }
-
-        protected override DtoRestStatus CanDelete(Dmn.Note domain)
-        {
-            return this.Permissions.IsInternal() ? DtoRestStatus.Success : DtoRestStatus.Forbidden;
+                    DtoRestStatus status = this.Permissions.HasPermissionsForAccount(domain.Notebook.AccountId) ?
+                        DtoRestStatus.Success : DtoRestStatus.Forbidden;
+                    return new DtoActionResult<Dmn.Note>(status, domain);
+                })
+               .ToList();
         }
 
         protected override DtoRestStatus CanRead(IEnumerable<int> ids)
@@ -50,36 +49,63 @@ namespace Services.DtoServices
             return DtoRestStatus.BadRequest;
         }
 
-        protected override DtoActionResult<Dmn.Note> Construct(Dto.Note dto)
+        protected override IEnumerable<DtoActionResult<Dmn.Note>> ConstructMany(IEnumerable<Dto.Note> dtos)
         {
-            if (this.Permissions.GetAccountId().HasValue == false)
-            {
-                return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden);
-            }
+            IEnumerable<int> notebookIds = dtos
+                .Select(dto => dto.NotebookId)
+                .ToList();
 
-            Dmn.Note domain = new Dmn.Note(dto.Title, dto.Body, dto.NotebookId);
+            IEnumerable<Dmn.Notebook> notebooks = this.notebookService.Get(notebookIds)
+                .ToList();
 
-            return new DtoActionResult<Dmn.Note>(DtoRestStatus.Success, domain);
+            return dtos
+                .Select(dto =>
+                {
+                    Dmn.Notebook notebook = notebooks.FirstOrDefault(i => i.Id == dto.NotebookId);
+
+                    if (this.Permissions.HasPermissionsForAccount(notebook.AccountId) == false)
+                    {
+                        return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden);
+                    }
+
+                    Dmn.Note domain = new Dmn.Note(dto.Title, dto.Body, dto.NotebookId);
+
+                    return new DtoActionResult<Dmn.Note>(DtoRestStatus.Success, domain);
+                })
+                .ToList();
         }
 
-        protected override DtoRestStatus Update(Dmn.Note domain, Dto.Note dto)
+        protected override IEnumerable<DtoActionResult<Dmn.Note>> UpdateMany(VsUpdateEnumerable<Dto.Note, Dmn.Note, NoteMapper> updates)
         {
-            if (this.Permissions.HasPermissionsForAccount(domain.Notebook.AccountId) == false)
-            {
-                return DtoRestStatus.Forbidden;
-            }
+            IEnumerable<int> notebookIds = updates.Dtos
+                   .Select(dto => dto.NotebookId)
+                   .ToList();
 
-            // need to find alternate solution for this
-            if (this.notebookService.Get(dto.NotebookId).FirstOrDefault()?.AccountId != domain.Notebook.AccountId)
-            {
-                return DtoRestStatus.Forbidden;
-            }
+            IEnumerable<Dmn.Notebook> notebooks = this.notebookService.Get(notebookIds)
+                .ToList();
 
-            domain.Title = dto.Title;
-            domain.Body = dto.Body;
-            domain.NotebookId = dto.NotebookId;
+            return updates
+                .Include(dmn => dmn.Notebook)
+                .Select(pair =>
+                {
+                    if (this.Permissions.HasPermissionsForAccount(pair.Domain.Notebook.AccountId) == false)
+                    {
+                        return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden, pair.Domain);
+                    }
 
-            return DtoRestStatus.Success;
+                    Dmn.Notebook newNotebook = notebooks.FirstOrDefault(i => i.Id == pair.Dto.NotebookId);
+                    if (this.Permissions.HasPermissionsForAccount(newNotebook.AccountId))
+                    {
+                        return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden, pair.Domain);
+                    }
+
+                    pair.Domain.Title = pair.Dto.Title;
+                    pair.Domain.Body = pair.Dto.Body;
+                    pair.Domain.NotebookId = pair.Dto.NotebookId;
+
+                    return new DtoActionResult<Dmn.Note>(DtoRestStatus.Success, pair.Domain);
+                })
+                .ToList();
         }
     }
 }

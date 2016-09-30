@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Services.Converters;
+using Services.General;
+using Services.Mappers;
+using Services.Services;
+using System.Collections.Generic;
 using System.Linq;
 using Vstack.Services.General;
 using Vstack.Services.Services;
@@ -7,15 +11,15 @@ using Dmn = Domain;
 namespace Services.DtoServices
 {
     public class NotebookDtoService
-        : BaseUndeletedSingleDtoService<Dto.Notebook, Dmn.Notebook, Mappers.NotebookMapper, Converters.NotebookConverter, Services.NotebookService, General.Permissions>
+        : BaseUndeletedSingleDtoService<Dto.Notebook, Dmn.Notebook, NotebookMapper, NotebookConverter, NotebookService, Permissions>
     {
         public NotebookDtoService()
-            : this(General.Permissions.Empty)
+            : this(Permissions.Empty)
         {
         }
 
-        public NotebookDtoService(General.Permissions permissions)
-            : base(new Services.NotebookService(), permissions, false)
+        public NotebookDtoService(Permissions permissions)
+            : base(new NotebookService(), permissions, false)
         {
         }
 

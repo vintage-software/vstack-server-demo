@@ -10,9 +10,10 @@ namespace Services.Converters
             return new Dto.Note()
             {
                 Id = this.Domain.Id,
+                NotebookId = this.Domain.NotebookId,
                 Title = this.Domain.Title,
                 Body = this.GetBody(),
-                NotebookId = this.Domain.NotebookId
+                Notebook = this.GetNotebook()
             };
         }
 
@@ -23,6 +24,15 @@ namespace Services.Converters
                 domain: i => i.Body,
                 dto: i => i.Body,
                 autoInclude: false);
+        }
+
+        private Dto.Notebook GetNotebook()
+        {
+            return this.HandlePermissions(
+                hasPermissions: true,
+                domain: i => i.Notebook,
+                dto: i => i.Notebook,
+                converter: new NotebookConverter());
         }
     }
 }
