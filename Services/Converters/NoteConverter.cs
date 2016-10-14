@@ -12,7 +12,7 @@ namespace Services.Converters
                 Id = this.Domain.Id,
                 NotebookId = this.Domain.NotebookId,
                 Title = this.Domain.Title,
-                Body = this.GetBody(),
+                Content = this.GetBody(),
                 Notebook = this.GetNotebook()
             };
         }
@@ -21,8 +21,8 @@ namespace Services.Converters
         {
             return this.HandlePermissions(
                 hasPermissions: true,
-                domain: i => i.Body,
-                dto: i => i.Body,
+                domain: i => i.Content,
+                dto: i => i.Content,
                 autoInclude: false);
         }
 

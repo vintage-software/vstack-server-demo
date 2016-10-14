@@ -5,10 +5,10 @@ namespace Domain
 {
     public class Note : BaseDomain
     {
-        public Note(string title, string body, int notebookId)
+        public Note(string title, string content, int notebookId)
         {
             this.Title = title;
-            this.Body = body;
+            this.Content = content;
             this.NotebookId = notebookId;
         }
 
@@ -18,7 +18,7 @@ namespace Domain
 
         public string Title { get; set; }
 
-        public string Body { get; set; }
+        public string Content { get; set; }
 
         [ForeignKey(nameof(Notebook))]
         public int NotebookId { get; set; }

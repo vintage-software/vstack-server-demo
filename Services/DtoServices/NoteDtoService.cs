@@ -68,7 +68,7 @@ namespace Services.DtoServices
                         return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden);
                     }
 
-                    Dmn.Note domain = new Dmn.Note(dto.Title, dto.Body, dto.NotebookId);
+                    Dmn.Note domain = new Dmn.Note(dto.Title, dto.Content, dto.NotebookId);
 
                     return new DtoActionResult<Dmn.Note>(DtoRestStatus.Success, domain);
                 })
@@ -100,7 +100,7 @@ namespace Services.DtoServices
                     }
 
                     pair.Domain.Title = pair.Dto.Title;
-                    pair.Domain.Body = pair.Dto.Body;
+                    pair.Domain.Content = pair.Dto.Content;
                     pair.Domain.NotebookId = pair.Dto.NotebookId;
 
                     return new DtoActionResult<Dmn.Note>(DtoRestStatus.Success, pair.Domain);
