@@ -1,4 +1,5 @@
-﻿using Vstack.Services.Converters;
+﻿using System.Collections.Generic;
+using Vstack.Services.Converters;
 
 namespace Services.Converters
 {
@@ -17,7 +18,7 @@ namespace Services.Converters
             };
         }
 
-        private Dto.Note[] GetNotes()
+        private IEnumerable<Dto.Note> GetNotes()
         {
             return this.HandlePermissions(
                 hasPermissions: true,

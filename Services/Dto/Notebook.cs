@@ -1,4 +1,5 @@
-﻿using Vstack.Services.Dto;
+﻿using System.Collections.Generic;
+using Vstack.Services.Dto;
 
 namespace Services.Dto
 {
@@ -12,6 +13,6 @@ namespace Services.Dto
 
         public string Description { get; set; }
 
-        public Note[] Notes { get; set; }
+        public IEnumerable<Note> Notes { get; set; }
     }
 }

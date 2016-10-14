@@ -26,6 +26,6 @@ namespace Domain
 
         public virtual Account Account { get; set; }
 
-        public virtual ICollection<Note> Notes { get; set; }
+        public virtual IEnumerable<Note> Notes { get; set; }
     }
 }
