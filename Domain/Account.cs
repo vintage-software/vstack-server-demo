@@ -23,8 +23,6 @@ namespace Domain
         {
         }
 
-        public int AccountId { get; private set; }
-
         public string EmailAddress { get; set; }
 
         public string Password { get; set; }
