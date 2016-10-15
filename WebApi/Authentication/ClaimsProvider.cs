@@ -20,6 +20,7 @@ namespace WebApi.Authentication
             int accountId = userId;
 
             ClaimsIdentity claims = new ClaimsIdentity(DefaultAuthenticationTypes.ApplicationCookie);
+
             claims.AddClaims(new Claim[] {
                 new Claim(VstackClaimTypes.UserId, account.Id.ToString()),
                 new Claim(VstackClaimTypes.SecurityStamp, account.SecurityStamp),

@@ -15,6 +15,7 @@ namespace Services.DtoServices
         : BaseUndeletedDtoService<Dto.Note, Dmn.Note, NoteMapper, NoteConverter, NoteService, Permissions>
     {
         private readonly NotebookService notebookService = new NotebookService();
+        private readonly AccountService accountService = new AccountService();
 
         public NoteDtoService()
             : this(Permissions.Empty)
@@ -39,9 +40,15 @@ namespace Services.DtoServices
                .ToList();
         }
 
-        protected override DtoRestStatus CanRead(IEnumerable<int> ids)
+        protected override DtoRestStatus CanRead(IEnumerable<int> noteIds)
         {
-            return ids.All(id => this.Permissions.HasPermissionsForAccount(id)) ? DtoRestStatus.Success : DtoRestStatus.Forbidden;
+            IEnumerable<Dmn.Account> accounts = this.Service.Get(noteIds)
+                .Include(i => i.Notebook)
+                .Include(i => i.Notebook.Account)
+                .ToList()
+                .Select(i => i.Notebook.Account);
+
+            return accounts.Select(i => i.Id).All(i => this.Permissions.HasPermissionsForAccount(i)) ? DtoRestStatus.Success : DtoRestStatus.Forbidden;
         }
 
         protected override DtoRestStatus CanReadAll()
