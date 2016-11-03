@@ -25,14 +25,5 @@ namespace Services.Converters
                 dto: i => i.Password,
                 autoInclude: true);
         }
-
-        //private Dto.Note GetNotes()
-        //{
-        //    return this.HandlePermissions(
-        //        hasPermissions: true,
-        //        domain: i => i.Employer,
-        //        dto: i => i.Employer,
-        //        converter: new EmployerConverter());
-        //}
     }
 }

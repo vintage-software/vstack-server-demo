@@ -60,6 +60,7 @@ namespace Services.DtoServices
         {
             IEnumerable<int> notebookIds = dtos
                 .Select(dto => dto.NotebookId)
+                .Distinct()
                 .ToList();
 
             IEnumerable<Dmn.Notebook> notebooks = this.notebookService.Get(notebookIds)
@@ -86,6 +87,7 @@ namespace Services.DtoServices
         {
             IEnumerable<int> notebookIds = updates.Dtos
                    .Select(dto => dto.NotebookId)
+                   .Distinct()
                    .ToList();
 
             IEnumerable<Dmn.Notebook> notebooks = this.notebookService.Get(notebookIds)
@@ -101,7 +103,7 @@ namespace Services.DtoServices
                     }
 
                     Dmn.Notebook newNotebook = notebooks.FirstOrDefault(i => i.Id == pair.Dto.NotebookId);
-                    if (this.Permissions.HasPermissionsForAccount(newNotebook.AccountId))
+                    if (this.Permissions.HasPermissionsForAccount(newNotebook.AccountId) == false)
                     {
                         return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden, pair.Domain);
                     }

@@ -12,12 +12,12 @@ namespace Services.Converters
                 Id = this.Domain.Id,
                 NotebookId = this.Domain.NotebookId,
                 Title = this.Domain.Title,
-                Content = this.GetBody(),
+                Content = this.GetContent(),
                 Notebook = this.GetNotebook()
             };
         }
 
-        private string GetBody()
+        private string GetContent()
         {
             return this.HandlePermissions(
                 hasPermissions: true,
