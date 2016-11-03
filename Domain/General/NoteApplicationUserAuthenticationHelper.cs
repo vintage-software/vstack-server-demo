@@ -7,7 +7,7 @@ namespace Domain.General
         : UserAuthenticationHelper
     {
         public NoteApplicationUserAuthenticationHelper()
-            : base(45, TimeSpan.FromMinutes(5), TimeSpan.FromHours(1), 7)
+            : base(45, TimeSpan.FromMinutes(5), TimeSpan.FromHours(1), 7, TimeSpan.FromMinutes(5))
         {
         }
     }

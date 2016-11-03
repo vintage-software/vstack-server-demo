@@ -41,6 +41,8 @@ namespace Domain
 
         public DateTime? UtcDatePasswordLastSet { get; set; }
 
+        public DateTime? UtcDatePasswordResetLastRequested { get; set; }
+
         public void SetPassword(string password)
         {
             this.Password = password;
