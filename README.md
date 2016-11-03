@@ -4,7 +4,7 @@ A complete server-side demo of the Vstack framework. The api supports permission
 
 ### Postman
 
-You can use Postman to test API endpoints. [Click Here to Download Postman Collection](https://www.getpostman.com/collections/3de27526e782f9334c72)
+You can use Postman to test API endpoints. [Download Postman Collection](https://www.getpostman.com/collections/3de27526e782f9334c72)
 
 ### Vstack Hub Repository
 
