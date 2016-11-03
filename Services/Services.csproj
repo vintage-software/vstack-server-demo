@@ -88,6 +88,7 @@
     <Compile Include="Dto\Account.cs" />
     <Compile Include="Filters\Account\ByEmailAddress.cs" />
     <Compile Include="Filters\Account\ByName.cs" />
+    <Compile Include="Filters\Notebook\ByAccountId.cs" />
     <Compile Include="General\Permissions.cs" />
     <Compile Include="Mappers\NotebookMapper.cs" />
     <Compile Include="Mappers\NoteMapper.cs" />
