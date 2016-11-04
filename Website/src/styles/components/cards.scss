@@ -1,0 +1,11 @@
+.card {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 0;
+
+  p:last-child {
+    margin-bottom: 0 !important;
+  }
+}
