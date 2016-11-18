@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { routes } from './app.routes';
+import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
@@ -27,10 +27,11 @@ import { NotebooksComponent } from './notebooks/notebooks.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
-    FormsModule,
+    RoutingModule,
+    ReactiveFormsModule,
     HttpModule,
-    SharedModule
+    // Why not just add providers to this module ? (ask Cory)
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [ AppComponent ]

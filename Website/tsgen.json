@@ -1,0 +1,13 @@
+{
+  "src": [
+    "../Services/Dto/**/*.cs"
+  ],
+  "references": [
+    "./src/app/shared/dto/references.ts"
+  ],
+  "outFile": "./src/app/shared/dto/generated.ts",
+  "options": {
+    "prefixWithI": false,
+    "dateTimeToDate": false
+  }
+}

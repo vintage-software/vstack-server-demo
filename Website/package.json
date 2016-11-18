@@ -8,7 +8,8 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "tsgen": "node node_modules/vstack-typescript-generator-cli/tsgen.js"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +42,7 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
+    "vstack-typescript-generator-cli": "^0.3.10",
     "webdriver-manager": "10.2.5"
   }
 }

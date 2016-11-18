@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
@@ -7,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { NotesComponent } from './notes/notes.component';
 import { NotebooksComponent } from './notebooks/notebooks.component';
 
-export const routes: Routes = [
+const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'about', component: AboutComponent},
   { path: 'login', component: LoginComponent },
@@ -15,3 +16,10 @@ export const routes: Routes = [
   { path: 'notes', component: NotesComponent },
   { path: 'notebooks', component: NotebooksComponent },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  exports: [RouterModule],
+  providers: []
+})
+export class RoutingModule { }
