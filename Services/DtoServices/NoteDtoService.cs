@@ -43,12 +43,16 @@ namespace Services.DtoServices
         protected override DtoRestStatus CanRead(IEnumerable<int> noteIds)
         {
             IEnumerable<Dmn.Account> accounts = this.Service.Get(noteIds)
-                .Include(i => i.Notebook)
-                .Include(i => i.Notebook.Account)
-                .ToList()
-                .Select(i => i.Notebook.Account);
+                .Include(note => note.Notebook)
+                .Include(note => note.Notebook.Account)
+                .Select(note => note.Notebook.Account)
+                .ToList();
 
-            return accounts.Select(i => i.Id).All(i => this.Permissions.HasPermissionsForAccount(i)) ? DtoRestStatus.Success : DtoRestStatus.Forbidden;
+            bool hasPermission = accounts
+                .Select(account => account.Id)
+                .All(accountId => this.Permissions.HasPermissionsForAccount(accountId));
+
+            return hasPermission ? DtoRestStatus.Success : DtoRestStatus.Forbidden;
         }
 
         protected override DtoRestStatus CanReadAll()
@@ -102,7 +106,7 @@ namespace Services.DtoServices
                         return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden, pair.Domain);
                     }
 
-                    Dmn.Notebook newNotebook = notebooks.FirstOrDefault(i => i.Id == pair.Dto.NotebookId);
+                    Dmn.Notebook newNotebook = notebooks.FirstOrDefault(notebook => notebook.Id == pair.Dto.NotebookId);
                     if (this.Permissions.HasPermissionsForAccount(newNotebook.AccountId) == false)
                     {
                         return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden, pair.Domain);

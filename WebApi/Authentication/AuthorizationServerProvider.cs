@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
+using Vstack.Extensions;
 using Vstack.Services.Security;
 
 namespace WebApi.Authentication
@@ -17,7 +18,7 @@ namespace WebApi.Authentication
 
         private readonly ClaimsProvider claimsProvider = new ClaimsProvider();
 
-        protected SignInManager SignInManager
+        private static SignInManager SignInManager
         {
             get
             {
@@ -27,6 +28,8 @@ namespace WebApi.Authentication
 
         public override Task TokenEndpointResponse(OAuthTokenEndpointResponseContext context)
         {
+            context.ValidateNotNullParameter(nameof(context));
+
             Permissions permissions = this.claimsProvider.GetPermissions(context.Identity);
             context.AdditionalResponseParameters.Add("userId", permissions.GetAccountId());
             return base.TokenEndpointResponse(context);
@@ -34,6 +37,8 @@ namespace WebApi.Authentication
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
+            context.ValidateNotNullParameter(nameof(context));
+
             context.Validated();
             return base.ValidateClientAuthentication(context);
         }
@@ -56,7 +61,7 @@ namespace WebApi.Authentication
 
                 if (status == AuthenticationStatus.Success)
                 {
-                    this.SignInManager.SignIn(employee.Id, false);
+                    SignInManager.SignIn(employee.Id, false);
                     ClaimsIdentity claims = this.claimsProvider.GetClaims(employee.Id);
                     context.Validated(claims);
                 }

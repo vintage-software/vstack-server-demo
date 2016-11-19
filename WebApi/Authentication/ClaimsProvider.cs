@@ -4,6 +4,7 @@ using Services.General;
 using Services.Services;
 using System.Linq;
 using System.Security.Claims;
+using Vstack.Legacy.Api.General;
 using Vstack.Legacy.Api.Startup;
 using Vstack.Services.Security;
 
@@ -35,27 +36,15 @@ namespace WebApi.Authentication
             return null;
         }
 
-        public Permissions GetPermissions(ClaimsIdentity claims)
+        public Permissions GetPermissions(ClaimsIdentity claimsIdentity)
         {
-            return new Permissions(GetIntClaim(claims, ClaimType.AccountId));
+            return new Permissions(claimsIdentity.GetIntClaim(ClaimType.AccountId.ToString()));
         }
 
         private Account LoadAccount(int accountId)
         {
             return this.accountService.Get(accountId)
                 .FirstOrDefault();
-        }
-
-        private static int? GetIntClaim(ClaimsIdentity claims, ClaimType type)
-        {
-            int temp;
-            string value = GetClaim(claims, type);
-            return int.TryParse(value, out temp) ? (int?)temp : null;
-        }
-
-        private static string GetClaim(ClaimsIdentity claims, ClaimType type)
-        {
-            return claims.Claims.FirstOrDefault(i => i.Type == type.ToString())?.Value;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Services.Mappers
 
         public IQueryable<Notebook> GetByAccountId(int accountId)
         {
-            return this.Context.Notebooks.Where(i => i.AccountId == accountId);
+            return this.Context.Notebooks.Where(notebook => notebook.AccountId == accountId);
         }
     }
 }

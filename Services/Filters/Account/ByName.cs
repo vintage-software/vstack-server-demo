@@ -17,7 +17,10 @@ namespace Services.Filters.Account
 
         public IQueryable<Dmn.Account> Filter(IQueryable<Dmn.Account> domains)
         {
-            return domains.Where(i => i.FirstName.ToLower() == this.firstName.ToLower() && i.LastName.ToLower() == this.lastName.ToLower());
+            string lowerFirstName = this.firstName.ToLower();
+            string lowerLastName = this.lastName.ToLower();
+
+            return domains.Where(account => account.FirstName.ToLower() == lowerFirstName && account.LastName.ToLower() == lowerLastName);
         }
     }
 }

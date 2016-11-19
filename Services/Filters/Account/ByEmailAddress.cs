@@ -15,7 +15,7 @@ namespace Services.Filters.Account
 
         public IQueryable<Dmn.Account> Filter(IQueryable<Dmn.Account> domains)
         {
-            return domains.Where(i => i.EmailAddress.ToLower() == this.emailAddress.ToLower());
+            return domains.Where(account => account.EmailAddress.ToLower() == this.emailAddress.ToLower());
         }
     }
 }

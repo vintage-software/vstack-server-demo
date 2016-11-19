@@ -30,7 +30,7 @@ namespace Services.DtoServices
 
         protected override DtoRestStatus CanRead(IEnumerable<int> ids)
         {
-            bool ownsNotebooks = this.Service.Get(ids).All(i => this.Permissions.HasPermissionsForAccount(i.AccountId));
+            bool ownsNotebooks = this.Service.Get(ids).All(dmn => this.Permissions.HasPermissionsForAccount(dmn.AccountId));
 
             return ownsNotebooks ? DtoRestStatus.Success : DtoRestStatus.Forbidden;
         }

@@ -19,12 +19,20 @@ namespace Services.Persistence
             context.SaveChanges();
 
             // accounts = await context.Accounts.ToListAsync();
-            accounts.ForEach(account => notebooks.Add(GetDefaultNotebook(account)));
+            foreach (Account account in accounts)
+            {
+                notebooks.Add(GetDefaultNotebook(account));
+            }
+
             context.Notebooks.AddRange(notebooks);
             context.SaveChanges();
 
             // notebooks = await context.Notebooks.ToListAsync();
-            notebooks.ForEach(notebook => notes.Add(GetDefaultNote(notebook)));
+            foreach (Notebook notebook in notebooks)
+            {
+                notes.Add(GetDefaultNote(notebook));
+            }
+
             context.Notes.AddRange(notes);
             context.SaveChanges();
 

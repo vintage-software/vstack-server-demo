@@ -5,6 +5,7 @@ using Owin;
 using Services.General;
 using System;
 using System.Web;
+using Vstack.Extensions;
 using Vstack.Legacy.Api.Startup;
 using WebApi.Authentication;
 
@@ -62,13 +63,15 @@ namespace WebApi.App_Start
 
         protected override void OnApplyRedirect(CookieApplyRedirectContext context)
         {
-            if (!this.IsWebApiRequest(context.Request))
+            context.ValidateNotNullParameter(nameof(context));
+
+            if (IsWebApiRequest(context.Request) == false)
             {
                 context.Response.Redirect(context.RedirectUri);
             }
         }
 
-        private bool IsWebApiRequest(IOwinRequest request)
+        private static bool IsWebApiRequest(IOwinRequest request)
         {
             return request.Uri.LocalPath.StartsWith(VirtualPathUtility.ToAbsolute($"~/api/"));
         }
