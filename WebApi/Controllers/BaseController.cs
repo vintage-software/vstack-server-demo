@@ -1,11 +1,12 @@
 ﻿using Services.General;
 using System.Security.Claims;
-using Vstack.Legacy.Api.Web.Controllers;
+using Vstack.Api.Web.Controllers;
 using Vstack.Services.Converters;
 using Vstack.Services.Domain;
 using Vstack.Services.Dto;
 using Vstack.Services.General;
 using Vstack.Services.Services;
+using WebApi.App_Start;
 using WebApi.Authentication;
 
 namespace WebApi.Controllers
@@ -19,7 +20,12 @@ namespace WebApi.Controllers
         where TService : BaseService<TDmn, TMapper>
         where TDtoService : BaseDtoService<TDto, TDmn, TMapper, TConverter, TService, Permissions>, new()
     {
-        ClaimsProvider claimsProvider = new ClaimsProvider();
+        private readonly ClaimsProvider claimsProvider = new ClaimsProvider();
+
+        protected BaseController(TDtoService dtoService)
+            : base(AutofacResolver.Instance, dtoService)
+        {
+        }
 
         public override Permissions Permissions
         {

@@ -1,9 +1,8 @@
 ﻿using Domain;
-using Services.Persistence;
 using System.Linq;
 using Vstack.Services.Mappers;
 
-namespace Services.Mappers
+namespace Persistence.Mappers
 {
     public class NotebookMapper : BaseEfMapper<DbContext, Notebook>
     {

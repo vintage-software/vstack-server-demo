@@ -7,7 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
-using Vstack.Extensions;
+using Vstack.Common.Extensions;
 using Vstack.Services.Security;
 
 namespace WebApi.Authentication

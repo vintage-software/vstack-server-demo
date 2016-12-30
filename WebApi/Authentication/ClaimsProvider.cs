@@ -4,8 +4,8 @@ using Services.General;
 using Services.Services;
 using System.Linq;
 using System.Security.Claims;
-using Vstack.Legacy.Api.General;
-using Vstack.Legacy.Api.Startup;
+using Vstack.Api.General;
+using Vstack.Api.Startup;
 using Vstack.Services.Security;
 
 namespace WebApi.Authentication

@@ -5,8 +5,8 @@ using Owin;
 using Services.General;
 using System;
 using System.Web;
-using Vstack.Extensions;
-using Vstack.Legacy.Api.Startup;
+using Vstack.Api.Startup;
+using Vstack.Common.Extensions;
 using WebApi.Authentication;
 
 [assembly: OwinStartup(typeof(WebApi.App_Start.Startup))]

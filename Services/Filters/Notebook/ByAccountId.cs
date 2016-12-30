@@ -1,5 +1,5 @@
-﻿using Services.General;
-using Services.Mappers;
+﻿using Persistence.Mappers;
+using Services.General;
 using System.Linq;
 using Vstack.Services.Filters;
 using Vstack.Services.General;

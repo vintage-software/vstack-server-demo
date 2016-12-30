@@ -1,9 +1,9 @@
 ﻿using Domain;
 using System.Collections.Generic;
 using System.Data.Entity;
-using Vstack.Extensions;
+using Vstack.Common.Extensions;
 
-namespace Services.Persistence
+namespace Persistence
 {
     public class Initializer : DropCreateDatabaseIfModelChanges<DbContext>
     {
