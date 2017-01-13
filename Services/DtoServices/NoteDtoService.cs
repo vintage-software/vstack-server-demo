@@ -72,7 +72,7 @@ namespace Services.DtoServices
                 {
                     Dmn.Notebook notebook = notebooks.FirstOrDefault(i => i.Id == dto.NotebookId);
 
-                    if (this.Permissions.HasPermissionsForAccount(notebook.AccountId) == false)
+                    if (notebook != null && this.Permissions.HasPermissionsForAccount(notebook.AccountId) == false)
                     {
                         return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden);
                     }
@@ -104,7 +104,7 @@ namespace Services.DtoServices
                     }
 
                     Dmn.Notebook newNotebook = notebooks.FirstOrDefault(notebook => notebook.Id == pair.Dto.NotebookId);
-                    if (this.Permissions.HasPermissionsForAccount(newNotebook.AccountId) == false)
+                    if (newNotebook != null && this.Permissions.HasPermissionsForAccount(newNotebook.AccountId) == false)
                     {
                         return new DtoActionResult<Dmn.Note>(DtoRestStatus.Forbidden, pair.Domain);
                     }
