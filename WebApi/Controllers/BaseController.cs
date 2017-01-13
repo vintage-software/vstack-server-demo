@@ -11,14 +11,14 @@ using WebApi.Authentication;
 
 namespace WebApi.Controllers
 {
-    public class BaseController<TDto, TDmn, TMapper, TConverter, TService, TDtoService>
+    public abstract class BaseController<TDto, TDmn, TMapper, TConverter, TService, TDtoService>
         : EntityRestfulController<TDto, TDmn, TMapper, TConverter, TService, TDtoService, Permissions>
         where TDto : class, IRestDto
         where TDmn : class, IServiceDomain
         where TMapper : IMapper<TDmn>
         where TConverter : class, IDomainConverter<TDto, TDmn, Permissions>, new()
         where TService : BaseService<TDmn, TMapper>
-        where TDtoService : BaseDtoService<TDto, TDmn, TMapper, TConverter, TService, Permissions>, new()
+        where TDtoService : BaseDtoService<TDto, TDmn, TMapper, TConverter, TService, Permissions>
     {
         private readonly ClaimsProvider claimsProvider = new ClaimsProvider();
 

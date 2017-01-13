@@ -9,7 +9,7 @@ namespace WebApi.Controllers
     public class NotesController
         : BaseController<Dto.Note, Domain.Note, NoteMapper, NoteConverter, NoteService, NoteDtoService>
     {
-        NotesController(NoteDtoService dtoService)
+        public NotesController(NoteDtoService dtoService)
             : base(dtoService)
         {
         }

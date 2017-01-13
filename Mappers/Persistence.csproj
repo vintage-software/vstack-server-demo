@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\..\vstack\vstack-strict.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\..\..\..\..\Builds\vstack\vstack-strict.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -83,11 +83,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\vstack-common\Vstack.Common\Vstack.Common.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\Builds\vstack-common\Vstack.Common\Vstack.Common.csproj">
       <Project>{029ecbe3-6e0e-498e-80a7-bad385891c91}</Project>
       <Name>Vstack.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\vstack-services\Vstack.Services\Vstack.Services.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\Builds\vstack-services\Vstack.Services\Vstack.Services.csproj">
       <Project>{86d88ab5-bd70-43af-8538-a3f9cd53e979}</Project>
       <Name>Vstack.Services</Name>
     </ProjectReference>

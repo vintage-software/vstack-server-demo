@@ -13,13 +13,8 @@ namespace Services.DtoServices
     public class AccountDtoService
         : BaseUndeletedSingleDtoService<Dto.Account, Dmn.Account, AccountMapper, AccountConverter, AccountService, Permissions>
     {
-        public AccountDtoService()
-            : this(Permissions.Empty)
-        {
-        }
-
-        public AccountDtoService(Permissions permissions)
-            : base(new AccountService(), permissions, false)
+        public AccountDtoService(AccountService accountService, Permissions permissions)
+            : base(accountService, permissions, false)
         {
         }
 

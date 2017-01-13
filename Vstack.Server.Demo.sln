@@ -9,17 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{3221B6B2-6456-4E03-811D-E964FCC1985C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Services", "..\vstack-services\Vstack.Services\Vstack.Services.csproj", "{86D88AB5-BD70-43AF-8538-A3F9CD53E979}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Services.Elastic", "..\vstack-services-elastic\Vstack.Services.Elastic\Vstack.Services.Elastic.csproj", "{FDF26743-2B8D-40ED-9D23-7CEC7DDFC002}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Common", "..\vstack-common\Vstack.Common\Vstack.Common.csproj", "{029ECBE3-6E0E-498E-80A7-BAD385891C91}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Api", "..\vstack-api\Vstack.Api\Vstack.Api.csproj", "{726CC1F8-DB43-454E-A79A-9C1845291401}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Externals", "..\vstack-externals\Vstack.Externals\Vstack.Externals.csproj", "{A6182F30-7583-41A5-8971-D33E923E8C37}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Mappers\Persistence.csproj", "{60BFDD98-5793-443D-AAD6-F86604F9F004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Api", "..\..\..\..\..\Builds\vstack-api\Vstack.Api\Vstack.Api.csproj", "{726CC1F8-DB43-454E-A79A-9C1845291401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Common", "..\..\..\..\..\Builds\vstack-common\Vstack.Common\Vstack.Common.csproj", "{029ECBE3-6E0E-498E-80A7-BAD385891C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Externals", "..\..\..\..\..\Builds\vstack-externals\Vstack.Externals\Vstack.Externals.csproj", "{A6182F30-7583-41A5-8971-D33E923E8C37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Services", "..\..\..\..\..\Builds\vstack-services\Vstack.Services\Vstack.Services.csproj", "{86D88AB5-BD70-43AF-8538-A3F9CD53E979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Services.Elastic", "..\..\..\..\..\Builds\vstack-services-elastic\Vstack.Services.Elastic\Vstack.Services.Elastic.csproj", "{FDF26743-2B8D-40ED-9D23-7CEC7DDFC002}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +39,22 @@ Global
 		{3221B6B2-6456-4E03-811D-E964FCC1985C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3221B6B2-6456-4E03-811D-E964FCC1985C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3221B6B2-6456-4E03-811D-E964FCC1985C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726CC1F8-DB43-454E-A79A-9C1845291401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726CC1F8-DB43-454E-A79A-9C1845291401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726CC1F8-DB43-454E-A79A-9C1845291401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726CC1F8-DB43-454E-A79A-9C1845291401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6182F30-7583-41A5-8971-D33E923E8C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6182F30-7583-41A5-8971-D33E923E8C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6182F30-7583-41A5-8971-D33E923E8C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6182F30-7583-41A5-8971-D33E923E8C37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86D88AB5-BD70-43AF-8538-A3F9CD53E979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{86D88AB5-BD70-43AF-8538-A3F9CD53E979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86D88AB5-BD70-43AF-8538-A3F9CD53E979}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,22 +63,6 @@ Global
 		{FDF26743-2B8D-40ED-9D23-7CEC7DDFC002}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDF26743-2B8D-40ED-9D23-7CEC7DDFC002}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDF26743-2B8D-40ED-9D23-7CEC7DDFC002}.Release|Any CPU.Build.0 = Release|Any CPU
-		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{726CC1F8-DB43-454E-A79A-9C1845291401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{726CC1F8-DB43-454E-A79A-9C1845291401}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{726CC1F8-DB43-454E-A79A-9C1845291401}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{726CC1F8-DB43-454E-A79A-9C1845291401}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6182F30-7583-41A5-8971-D33E923E8C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6182F30-7583-41A5-8971-D33E923E8C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6182F30-7583-41A5-8971-D33E923E8C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6182F30-7583-41A5-8971-D33E923E8C37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60BFDD98-5793-443D-AAD6-F86604F9F004}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

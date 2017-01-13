@@ -13,13 +13,8 @@ namespace Services.DtoServices
     public class NotebookDtoService
         : BaseUndeletedSingleDtoService<Dto.Notebook, Dmn.Notebook, NotebookMapper, NotebookConverter, NotebookService, Permissions>
     {
-        public NotebookDtoService()
-            : this(Permissions.Empty)
-        {
-        }
-
-        public NotebookDtoService(Permissions permissions)
-            : base(new NotebookService(), permissions, false)
+        public NotebookDtoService(NotebookService notebookService, Permissions permissions)
+            : base(notebookService, permissions, false)
         {
         }
 

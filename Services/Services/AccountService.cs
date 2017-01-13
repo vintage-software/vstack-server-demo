@@ -11,8 +11,8 @@ namespace Services.Services
     {
         private readonly UserAuthenticationHelper userAuthenticationHelper = new NoteApplicationUserAuthenticationHelper();
 
-        public AccountService()
-            : base(new AccountMapper())
+        public AccountService(AccountMapper accountMapper)
+            : base(accountMapper)
         {
         }
 

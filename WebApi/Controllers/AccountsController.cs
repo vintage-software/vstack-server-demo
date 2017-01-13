@@ -9,7 +9,7 @@ namespace WebApi.Controllers
     public class AccountsController
         : BaseController<Dto.Account, Domain.Account, AccountMapper, AccountConverter, AccountService, AccountDtoService>
     {
-        AccountsController(AccountDtoService dtoService)
+        public AccountsController(AccountDtoService dtoService)
             : base (dtoService)
         {
         }

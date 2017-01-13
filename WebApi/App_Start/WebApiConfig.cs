@@ -13,6 +13,8 @@ namespace WebApi.App_Start
         {
             config.ValidateNotNullParameter(nameof(config));
 
+            config.DependencyResolver = AutofacResolver.Instance.DependencyResolver;
+
             var formatters = GlobalConfiguration.Configuration.Formatters;
             var jsonFormatter = formatters.JsonFormatter;
             var settings = jsonFormatter.SerializerSettings;

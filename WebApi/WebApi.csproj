@@ -34,7 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\..\..\..\..\Builds\vstack\vstack-strict.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -202,6 +202,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Authentication\AuthorizationServerProvider.cs" />
+    <Compile Include="Authentication\ClaimsConverter.cs" />
     <Compile Include="Authentication\ClaimsProvider.cs" />
     <Compile Include="Authentication\ClaimType.cs" />
     <Compile Include="Authentication\SignInManager.cs" />
@@ -215,15 +216,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\vstack-api\Vstack.Api\Vstack.Api.csproj">
-      <Project>{726CC1F8-DB43-454E-A79A-9C1845291401}</Project>
+    <ProjectReference Include="..\..\..\..\..\..\Builds\vstack-api\Vstack.Api\Vstack.Api.csproj">
+      <Project>{726cc1f8-db43-454e-a79a-9c1845291401}</Project>
       <Name>Vstack.Api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\vstack-common\Vstack.Common\Vstack.Common.csproj">
-      <Project>{029ECBE3-6E0E-498E-80A7-BAD385891C91}</Project>
+    <ProjectReference Include="..\..\..\..\..\..\Builds\vstack-common\Vstack.Common\Vstack.Common.csproj">
+      <Project>{029ecbe3-6e0e-498e-80a7-bad385891c91}</Project>
       <Name>Vstack.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\vstack-services\Vstack.Services\Vstack.Services.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\Builds\vstack-services\Vstack.Services\Vstack.Services.csproj">
       <Project>{86d88ab5-bd70-43af-8538-a3f9cd53e979}</Project>
       <Name>Vstack.Services</Name>
     </ProjectReference>

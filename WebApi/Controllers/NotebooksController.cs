@@ -9,7 +9,7 @@ namespace WebApi.Controllers
     public class NotebooksController
         : BaseController<Dto.Notebook, Domain.Notebook, NotebookMapper, NotebookConverter, NotebookService, NotebookDtoService>
     {
-        NotebooksController(NotebookDtoService dtoService)
+        public NotebooksController(NotebookDtoService dtoService)
             : base(dtoService)
         {
         }

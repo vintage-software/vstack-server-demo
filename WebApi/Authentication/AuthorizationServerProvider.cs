@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Web;
 using Vstack.Common.Extensions;
 using Vstack.Services.Security;
+using WebApi.App_Start;
 
 namespace WebApi.Authentication
 {
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        private readonly AccountService employeeService = new AccountService();
+        private readonly AccountService employeeService = AutofacResolver.Instance.Resolve<AccountService>();
 
         private readonly ClaimsProvider claimsProvider = new ClaimsProvider();
 

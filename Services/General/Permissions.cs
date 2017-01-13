@@ -8,9 +8,9 @@ namespace Services.General
 
         private readonly int? accountId;
 
-        public Permissions(int? accountId)
+        public Permissions(Claims claims)
         {
-            this.accountId = accountId;
+            this.accountId = claims.AccountId;
         }
 
         private Permissions(bool isInternal)

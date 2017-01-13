@@ -32,7 +32,7 @@ namespace Services
 
         public object Resolve(Type type, string[] parameters)
         {
-            IEnumerable<KeyValuePair<string, object>> namedParameters = type.GetConvertableNamedParameters(parameters);
+            IEnumerable<KeyValuePair<string, object>> namedParameters = type.GetConvertibleNamedParameters(parameters);
             return this.Container.Resolve(type, namedParameters.Select(kvPair => new NamedParameter(kvPair.Key, kvPair.Value)));
         }
 
@@ -43,7 +43,7 @@ namespace Services
 
         public T Resolve<T>(string[] parameters)
         {
-            IEnumerable<KeyValuePair<string, object>> namedParameters = typeof(T).GetConvertableNamedParameters(parameters);
+            IEnumerable<KeyValuePair<string, object>> namedParameters = typeof(T).GetConvertibleNamedParameters(parameters);
             return this.Container.Resolve<T>(namedParameters.Select(kvPair => new NamedParameter(kvPair.Key, kvPair.Value)));
         }
 

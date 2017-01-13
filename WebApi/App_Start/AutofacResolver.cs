@@ -27,7 +27,7 @@ namespace WebApi.App_Start
                 if (this.container == null)
                 {
                     var builder = new ContainerBuilder();
-                    builder.RegisterTypes(this.mapperAssembly.FindConcreteClasses().ToArray()).AsImplementedInterfaces().SingleInstance();
+                    builder.RegisterTypes(this.mapperAssembly.FindConcreteClasses().ToArray()).SingleInstance();
                     builder.RegisterTypes(this.serviceAssembly.GetTypes());
                     builder.RegisterApiControllers(this.webAssembly);
                     this.container = builder.Build(this.Options);

@@ -6,8 +6,8 @@ namespace Services.Services
 {
     public class NotebookService : BaseService<Dmn.Notebook, NotebookMapper>
     {
-        public NotebookService()
-            : base(new NotebookMapper())
+        public NotebookService(NotebookMapper notebookMapper)
+            : base(notebookMapper)
         {
         }
     }

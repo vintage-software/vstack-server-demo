@@ -14,17 +14,14 @@ namespace Services.DtoServices
     public class NoteDtoService
         : BaseUndeletedDtoService<Dto.Note, Dmn.Note, NoteMapper, NoteConverter, NoteService, Permissions>
     {
-        private readonly NotebookService notebookService = new NotebookService();
-        private readonly AccountService accountService = new AccountService();
+        private readonly NotebookService notebookService;
+        private readonly AccountService accountService;
 
-        public NoteDtoService()
-            : this(Permissions.Empty)
+        public NoteDtoService(NoteService noteService, NotebookService notebookService, AccountService accountService, Permissions permissions)
+            : base(noteService, permissions, false)
         {
-        }
-
-        public NoteDtoService(Permissions permissions)
-            : base(new NoteService(), permissions, false)
-        {
+            this.notebookService = notebookService;
+            this.accountService = accountService;
         }
 
         protected override IEnumerable<DtoActionResult<Dmn.Note>> CanDeleteMany(VsIncludeEnumerable<Dmn.Note, NoteMapper> domains)

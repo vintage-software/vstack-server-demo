@@ -4,15 +4,15 @@ using Services.General;
 using Services.Services;
 using System.Linq;
 using System.Security.Claims;
-using Vstack.Api.General;
 using Vstack.Api.Startup;
 using Vstack.Services.Security;
+using WebApi.App_Start;
 
 namespace WebApi.Authentication
 {
     public class ClaimsProvider : IClaimsProvider<Permissions>
     {
-        private readonly AccountService accountService = new AccountService();
+        private readonly AccountService accountService = AutofacResolver.Instance.Resolve<AccountService>();
 
         public ClaimsIdentity GetClaims(int userId)
         {
@@ -36,9 +36,9 @@ namespace WebApi.Authentication
             return null;
         }
 
-        public Permissions GetPermissions(ClaimsIdentity claimsIdentity)
+        public Permissions GetPermissions(ClaimsIdentity claims)
         {
-            return new Permissions(claimsIdentity.GetIntClaim(ClaimType.AccountId.ToString()));
+            return new Permissions(ClaimsConverter.Convert(claims));
         }
 
         private Account LoadAccount(int accountId)
