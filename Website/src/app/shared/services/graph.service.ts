@@ -20,6 +20,15 @@ export class GraphService extends BaseGraphService<Graph> {
     public noteService: NoteService,
     public notebookService: NotebookService
   ) {
-    super([]);
+    super([
+      new ServiceConfig<Account, Graph>(accountService, (graph, collection) => graph.accounts = collection, []),
+      new ServiceConfig<Note, Graph>(noteService, (graph, collection) => graph.notes = collection, [
+        // new Relation('notebooks', notebookService, 'notebookId', false)
+      ]),
+      new ServiceConfig<Notebook, Graph>(notebookService, (graph, collection) => graph.notebooks = collection, [
+        // new Relation('account', accountService, 'accountId', false),
+        // new Relation('note', noteService, 'notes', true)
+      ]),
+    ]);
   }
 }

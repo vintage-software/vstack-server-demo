@@ -1,4 +1,14 @@
-@import "styles/bootstrap-config";
-@import "styles/forms";
-@import "styles/utility-helpers";
-@import "styles/general";
+@import 'styles/utilities/functions';
+@import 'styles/utilities/variables';
+@import 'styles/utilities/mixins';
+
+@import 'styles/blueprint/blueprint';
+
+@import 'styles/base/normalize';
+@import 'styles/base/typography';
+@import 'styles/base/fonts';
+@import 'styles/base/global';
+@import 'styles/base/helpers';
+
+@import 'styles/components/cards';
+@import 'styles/components/forms';

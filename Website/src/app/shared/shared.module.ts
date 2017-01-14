@@ -5,8 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { PageTitleComponent } from './components/page-title/page-title.component';
-import { CardComponent } from './components/card/card.component';
+import { NavComponent } from './layout/nav/nav.component';
+
 import { ControlMessagesComponent } from './components/control-messages/control-messages.component';
 
 import { AuthService } from './services/auth.service';
@@ -16,24 +16,23 @@ import { ErrorService } from './services/error.service';
 import { NotificationService } from './services/notification.service';
 import { ValidationService } from './services/validation.service';
 
+const sharedComponents = [
+  HeaderComponent,
+  FooterComponent,
+  ControlMessagesComponent,
+  NavComponent
+];
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule
   ],
   declarations: [
-    HeaderComponent,
-    FooterComponent,
-    PageTitleComponent,
-    CardComponent,
-    ControlMessagesComponent
+    sharedComponents
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent,
-    PageTitleComponent,
-    CardComponent,
-    ControlMessagesComponent
+    sharedComponents
   ]
 })
 export class SharedModule {

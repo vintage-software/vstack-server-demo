@@ -1,0 +1,26 @@
+@mixin font-size($size) {
+  font-size: em($size);
+  font-size: rem($size);
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin respond-to($break) {
+  @media screen and (min-width: $break) {
+    @content;
+  }
+}
+
+@mixin breakpoints {
+  @each $suffix, $break in $breakpoint-map {
+    @include respond-to($break) {
+      @include libraries($suffix);
+    }
+  }
+}

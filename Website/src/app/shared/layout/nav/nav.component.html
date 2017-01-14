@@ -1,0 +1,23 @@
+<nav class="nav">
+  <div class="container">
+    <div bp-layout="row gutter-bottom-none">
+      <div bp-layout="col 12 3@lg">
+        <a class="nav__logo" routerLink="/">Note Application</a>
+        <div class="nav__button" (click)="toggleNavigationLinks()"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
+      </div>
+      <div class="nav__links--container" bp-layout="col 12 6@sm 5@lg" [hidden]="!showNavigationLinks">
+        <ul class="nav__links nav__links--left">
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/notes">Notes</a></li>
+          <li><a routerLink="/notebooks">Notebooks</a></li>
+        </ul>
+      </div>
+      <div class="nav__links--container" bp-layout="col 12 6@sm 4@lg" [hidden]="!showNavigationLinks">
+        <ul class="nav__links nav__links--right">
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

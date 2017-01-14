@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "robotoregular";
+    src: url(./assets/fonts/roboto/roboto-regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "robotobold";
+    src: url(./assets/fonts/roboto/roboto-bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "robotoitalic";
+    src: url(./assets/fonts/roboto/roboto-italic.ttf) format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@import 'assets/fonts/font-awesome/font-awesome';

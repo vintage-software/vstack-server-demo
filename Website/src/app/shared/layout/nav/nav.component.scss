@@ -1,0 +1,103 @@
+@import '../../../../styles/utilities/functions';
+@import '../../../../styles/utilities/variables';
+@import '../../../../styles/utilities/mixins';
+
+.nav {
+  background-color: $color-secondary;
+  color: $color-white;
+  font-family: 'robotoregular';
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+    padding: 10px;
+
+    &:hover {
+      color: darken($color-white, 10%);
+    }
+  }
+
+  .nav__button {
+    padding: 11px;
+    float: right;
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav__logo {
+    display: block;
+    font-size: 30px;
+    float: left;
+    padding: 10px;
+  }
+
+  @include respond-to($sm-break) {
+    .nav__logo {
+      font-size: 25px;
+      float: initial;
+    }
+
+    .nav__button {
+      display: none;
+    }
+  }
+
+  @include respond-to($sm-break) {
+    .nav__links--container {
+      display: initial;
+    }
+  }
+
+  .nav__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      text-align: center;
+
+      &:hover {
+        background-color: lighten($color-secondary, 5%);
+      }
+    }
+
+    @include respond-to($sm-break) {
+      li {
+        text-align: left;
+      }
+    }
+
+    a {
+      font-size: 20px;
+      display: block;
+      padding: 15px;
+    }
+
+    @include respond-to($sm-break) {
+      a {
+        font-size: 16px;
+        padding: 10px;
+      }
+    }
+
+    @include respond-to($lg-break) {
+      a {
+        padding: 15px;
+      }
+    }
+  }
+
+  @include respond-to($sm-break) {
+    .nav__links--left {
+      li {
+        float: left;
+      }
+    }
+
+    .nav__links--right {
+      li {
+        float: right;
+      }
+    }
+  }
+}

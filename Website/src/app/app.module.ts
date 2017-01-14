@@ -30,7 +30,6 @@ import { NotebooksComponent } from './notebooks/notebooks.component';
     RoutingModule,
     ReactiveFormsModule,
     HttpModule,
-    // Why not just add providers to this module ? (ask Cory)
     SharedModule.forRoot()
   ],
   providers: [],

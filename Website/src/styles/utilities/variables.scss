@@ -1,0 +1,75 @@
+// Color Variables
+$color-primary:             #006495;
+$color-secondary:           #004C70;
+
+$color-black:               #000000;
+$color-gray-dark:           #373a3c;
+$color-gray:                #55595c;
+$color-gray-light:          #818a91;
+$color-white:               #ffffff;
+
+$color-success:             #5cb85c;
+$color-info:                #5bc0de;
+$color-warning:             #f0ad4e;
+$color-danger:              #d9534f;
+
+// Text Variables
+$paragraph-font-family:     "robotoregular", sans-serif;
+$paragraph-font-size:       font-size(50px);
+$paragraph-font-weight:     font-size(10px);
+$paragraph-line-height:     1.6;
+
+$heading-font-family:       "robotoregular", sans-serif;
+$heading-font-weight:       400;
+
+// Blueprint Variables
+$scope-prefix:              "bp-";
+$container-width:           1200px;
+$gutter:                    20px;
+$cols:                      12;
+
+// Breakpoint Variables
+$no-break:                  0;
+$xs-break:                  em(400px);
+$sm-break:                  em(600px);
+$md-break:                  em(800px);
+$lg-break:                  em(1000px);
+$xl-break:                  em(1200px);
+
+// Spacing Variables
+$no-spacing:                0;
+$xs-spacing:                em(5px);
+$sm-spacing:                em(10px);
+$md-spacing:                em(20px);
+$lg-spacing:                em(30px);
+$xl-spacing:                em(60px);
+
+// Size Suffixes
+$no-suffix:                 "";
+$xs-suffix:                 "--xs";
+$sm-suffix:                 "--sm";
+$md-suffix:                 "--md";
+$lg-suffix:                 "--lg";
+$xl-suffix:                 "--xl";
+
+// Location Suffixes
+$top-suffix:                "-top";
+$bottom-suffix:             "-bottom";
+$left-suffix:               "-left";
+$right-suffix:              "-right";
+
+// Misc
+$none-suffix:               "-none";
+
+// Lists
+$location-suffixes: $no-suffix, $top-suffix, $bottom-suffix, $left-suffix, $right-suffix;
+
+// Maps
+$spacing-map: (
+  $none-suffix:             $no-spacing,
+  $xs-suffix:               $xs-spacing,
+  $sm-suffix:               $sm-spacing,
+  $no-suffix:               $md-spacing,
+  $lg-suffix:               $lg-spacing,
+  $xl-suffix:               $xl-spacing
+);

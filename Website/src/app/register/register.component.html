@@ -1,29 +1,35 @@
-<app-page-title>Register</app-page-title>
+<app-header>Register</app-header>
 
-<div class="container margin-top">
-  <app-card class="col-md-6">
-    <form [formGroup]="registerForm" (ngSubmit)="submit()" novalidate>
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" formControlName="firstName">
-      <app-control-messages [control]="registerForm.controls.firstName"></app-control-messages>
+<div class="container">
+  <div bp-layout="row">
+    <div bp-layout="col 6">
+      <div class="card">
+        <form [formGroup]="registerForm" (ngSubmit)="submit()" novalidate>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" formControlName="firstName">
+          <app-control-messages [control]="registerForm.controls.firstName"></app-control-messages>
 
-      <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" formControlName="lastName">
-      <app-control-messages [control]="registerForm.controls.lastName"></app-control-messages>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" formControlName="lastName">
+          <app-control-messages [control]="registerForm.controls.lastName"></app-control-messages>
 
-      <label for="emailAddress">Email Address</label>
-      <input type="email" id="emailAddress" formControlName="emailAddress">
-      <app-control-messages [control]="registerForm.controls.emailAddress"></app-control-messages>
+          <label for="emailAddress">Email Address</label>
+          <input type="email" id="emailAddress" formControlName="emailAddress">
+          <app-control-messages [control]="registerForm.controls.emailAddress"></app-control-messages>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" formControlName="password">
-      <app-control-messages [control]="registerForm.controls.password"></app-control-messages>
+          <label for="password">Password</label>
+          <input type="password" id="password" formControlName="password">
+          <app-control-messages [control]="registerForm.controls.password"></app-control-messages>
 
-      <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary btn-lg">Register</button>
-    </form>
-  </app-card>
-  <app-card class="col-md-6">
-    <p>Already have an account?</p>
-    <a class="btn btn-primary" routerLink="/login">Login</a>
-  </app-card>
+          <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary btn-lg">Register</button>
+        </form>
+      </div>
+    </div>
+    <div bp-layout="col 6">
+      <div class="card">
+        <p>Already have an account?</p>
+        <a class="btn btn-primary" routerLink="/login">Login</a>
+      </div>
+    </div>
+  </div>
 </div>

@@ -17,5 +17,4 @@ export class NoteService extends VSCollectionService<Note> {
       options: { headers: AuthService.getDefaultApiHeaders() }
     }));
   }
-
 }
